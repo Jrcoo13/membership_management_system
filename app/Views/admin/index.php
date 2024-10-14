@@ -192,7 +192,7 @@
             padding: 10px;
             display: block;
             font-size: 1.25rem;
-            color: #FFF;
+            color: #6f63ff;
         }
 
         html[data-bs-theme="dark"] .theme-toggle .fa-moon {
@@ -257,7 +257,7 @@
                         <ul id="events" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
                                 <a href="#manage_events" class="sidebar-link">
-                                    <i class="fa-regular fa-calendar"></i>
+                                    <i class="fa-regular fa-calendar-days"></i>
                                     Manage Events</a>
                             </li>
                             <li class="sidebar-item">
@@ -315,7 +315,7 @@
                         </a>
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="profile.jpg" class="avatar img-fluid rounded" alt="">
+                                <img src="<?= base_url('images.jpeg') ?>" class="avatar img-fluid rounded-circle" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="#" class="dropdown-item">Profile</a>
