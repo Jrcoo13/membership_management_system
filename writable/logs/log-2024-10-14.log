@@ -1,0 +1,13 @@
+CRITICAL - 2024-10-14 13:18:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/admin/index.php"
+[Method: GET, Route: admin]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/index.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/index', [], true)
+ 3 APPPATH/Controllers/AdminController.php(12): view('/admin/index')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
