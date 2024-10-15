@@ -5,6 +5,12 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+    
+//login and registration routes
+$routes->get('/','AuthenticationController::login');
+$routes->get('register','AuthenticationController::register');
 
-$routes->get('/admin', 'AdminController::index');
+//admin routes
+$routes->get('/admin/index','AdminController::index');
+
+$routes->get('/admin/students','AdminController::students');

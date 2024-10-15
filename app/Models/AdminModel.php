@@ -6,13 +6,20 @@ use CodeIgniter\Model;
 
 class AdminModel extends Model
 {
-    protected $table            = 'admins';
+    protected $table            = 'student';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'student_id',
+        'name',
+        'email',
+        'course',
+        'year_level',
+        'join_date',
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

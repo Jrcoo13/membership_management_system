@@ -1,0 +1,176 @@
+CRITICAL - 2024-10-15 11:29:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/admin/index.php"
+[Method: GET, Route: /]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/index.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/index', [], true)
+ 3 APPPATH/Controllers/AdminController.php(12): view('/admin/index')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 11:59:28 --> ErrorException: Undefined variable $route
+[Method: GET, Route: admin/index]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:06 --> ErrorException: Undefined variable $route
+[Method: GET, Route: admin/index]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:06 --> ErrorException: Undefined variable $route
+[Method: GET, Route: admin/index]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:06 --> ErrorException: Undefined variable $route
+[Method: GET, Route: admin/index]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:09 --> ErrorException: Undefined variable $route
+[Method: GET, Route: admin/index]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:10 --> ErrorException: Undefined variable $route
+[Method: GET, Route: admin/index]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:10 --> ErrorException: Undefined variable $route
+[Method: GET, Route: admin/index]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:21 --> ErrorException: Undefined variable $route
+[Method: GET, Route: students/create]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:23 --> ErrorException: Undefined variable $route
+[Method: GET, Route: /]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:23 --> ErrorException: Undefined variable $route
+[Method: GET, Route: /]
+in APPPATH/Config/Routes.php on line 14.
+ 1 APPPATH/Config/Routes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php', 14)
+ 2 SYSTEMPATH/Router/RouteCollection.php(340): require('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 12:00:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/admin/index.php"
+[Method: GET, Route: admin/index]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/index.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/index', [], true)
+ 3 APPPATH/Controllers/AdminController.php(12): view('/admin/index')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 17:18:51 --> ErrorException: Undefined array key "id_number"
+[Method: GET, Route: admin/index]
+in APPPATH/Views/admin/index.php on line 173.
+ 1 APPPATH/Views/admin/index.php(173): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_number"', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/index.php', 173)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/index.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/index', [], true)
+ 5 APPPATH/Controllers/AdminController.php(14): view('admin/index', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-10-15 17:22:25 --> ErrorException: Undefined variable $student
+[Method: GET, Route: admin/students]
+in APPPATH/Views/admin/students.php on line 143.
+ 1 APPPATH/Views/admin/students.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $student', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/students.php', 143)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/students.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/students', [], true)
+ 5 APPPATH/Controllers/AdminController.php(18): view('/admin/students')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->students()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
