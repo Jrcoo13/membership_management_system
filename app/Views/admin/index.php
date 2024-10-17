@@ -7,19 +7,16 @@
 	<title>Dashboard</title>
 	<link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/logo.png') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-	<link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome/css/fontawesome.min.css') ?>">
-	<link rel="stylesheet" href="<?= base_url('assets/plugins/fontawesome/css/all.min.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/feathericon.min.css') ?>">
-	<link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css">
-	<link rel="stylesheet" href="<?= base_url('assets/plugins/morris/morris.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
 	<div class="main-wrapper">
 		<div class="header">
 			<div class="header-left">
-				<a href="<?= base_url('/admin/index') ?>" class="logo"> <img src="<?= base_url('assets/img/logo.png') ?>" width="50" height="70" alt="logo"> <span class="logoclass text-dark">LSU</span> </a>
+				<a href="<?= base_url('/admin/index') ?>" class="logo"> <img src="<?= base_url('assets/img/logo.png') ?>" width="50" height="70" alt="logo"> <span class="logoclass text-dark">LSC</span> </a>
 				<a href="<?= base_url('/admin/index') ?>" class="logo logo-small"> <img src="<?= base_url('assets/img/logo.png') ?>" alt="Logo" width="30" height="30"> </a>
 			</div>
 			<a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left text-dark"></i> </a>
@@ -34,7 +31,9 @@
 								<h6>Jerico Ocal</h6>
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
-						</div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item" href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a>
+						</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="<?= base_url('/') ?>">Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -45,32 +44,31 @@
 					<ul>
 						<li class="active"> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
 						<li class="list-divider"></li>
-						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Students </span> <span class="menu-arrow"></span></a>
+						<li class="submenu"> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="<?= base_url('admin/students') ?>"> Manage Student </a></li>
-								<li><a href="edit-customer.html"> Manage Membership </a></li>
-								<li><a href="edit-customer.html"> Student Status </a></li>
+								<li><a href="<?= base_url('admin/students') ?>"> All Students </a></li>
 							</ul>
 						</li>
+						<li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
 						<li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-customer.html"> Transaction History </a></li>
-								<li><a href="edit-customer.html"> Pending Payments </a></li>
-								<li><a href="add-customer.html"> Invoice and Receipts </a></li>
+								<li><a href="#"> Transaction History </a></li>
+								<li><a href="#"> Pending Payments </a></li>
+								<li><a href="#"> Invoice and Receipts </a></li>
 							</ul>
 						</li>
 						<li class="submenu"> <a href="#"><i class="fas fa-calendar-alt"></i> <span> Events & Activities </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-rooms.html"> Manage Events </a></li>
-								<li><a href="edit-room.html"> Event Registration </a></li>
-								<li><a href="add-room.html"> Event History & Analytics </a></li>
+								<li><a href="#"> Manage Events </a></li>
+								<li><a href="#"> Event Registration </a></li>
+								<li><a href="#"> Event History & Analytics </a></li>
 							</ul>
 						</li>
 						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="expense-reports.html"> Membership Analytics </a></li>
-								<li><a href="invoice-reports.html"> Financial Reports </a></li>
-								<li><a href="invoice-reports.html"> Activity Reports </a></li>
+								<li><a href="#"> Membership Analytics </a></li>
+								<li><a href="#"> Financial Reports </a></li>
+								<li><a href="#"> Activity Reports </a></li>
 							</ul>
 						</li>
 					</ul>
@@ -92,7 +90,7 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header">1009</h3>
+										<h3 class="card_widget_header"><?= esc($total_students); ?></h3>
 										<h6>Active Students</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
@@ -153,7 +151,7 @@
 						<div class="card card-table flex-fill">
 							<div class="card-header">
 								<h3 class="card-title float-left mt-2">Recently Added Students</h3>
-								<button type="button" class="btn text-primary float-right">View All</button>
+								<a href="<?= base_url('/admin/students') ?>" class="btn text-primary float-right">View All</a>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
@@ -168,14 +166,14 @@
 											</tr>
 										</thead>
 										<tbody>
-										<?php foreach ($student as $row) : ?>
-											<tr>
-												<td><?= $row['student_id'] ?></td>
-												<td><?= $row['name'] ?></td>
-												<td><?= $row['email'] ?></td>
-												<td><?= $row["course"] . ' ' . $row["year_level"]?></td>
-												<td class="text-center"><?= $row['join_date'] ?></td>
-											</tr>
+											<?php foreach ($student as $row) : ?>
+												<tr>
+													<td><?= $row['student_id'] ?></td>
+													<td><?= $row['name'] ?></td>
+													<td><?= $row['email'] ?></td>
+													<td><?= $row["course"] . ' ' . $row["year_level"] ?></td>
+													<td class="text-center"><?= $row['join_date'] ?></td>
+												</tr>
 											<?php endforeach; ?>
 										</tbody>
 									</table>
@@ -187,6 +185,8 @@
 			</div>
 		</div>
 	</div>
+	<!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<script data-cfasync="false" src="<?= base_url('../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/jquery-3.5.1.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/popper.min.js') ?>"></script>

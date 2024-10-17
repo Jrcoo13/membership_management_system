@@ -4,21 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AdminModel extends Model
+class MembershipModel extends Model
 {
-    protected $table            = 'student';
+    protected $table            = 'membership';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'student_id',
-        'name',
-        'email',
-        'course',
-        'year_level',
-        'join_date',
+        'membership_name',
+        'amount',
+        'created_at'
     ];
 
     protected bool $allowEmptyInserts = false;
