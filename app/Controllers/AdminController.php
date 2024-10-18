@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\PendingPaymentModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\StudentsModel;
 use App\Models\MembershipModel;
+use App\Models\PastTransactionModel;
 
 class AdminController extends BaseController
 {
@@ -116,7 +118,7 @@ class AdminController extends BaseController
             'amount' => $this->request->getPost('amount')
         ];
         $membership->save($data);
-        return redirect()->to('/admin/membership_plans')->with('status', 'Membership Added Successfully');
+        return redirect()->to('/admin/membership_plans')->with('status', 'Membership Fee Added Successfully');
     }
     //edit membership fee view
     public function editMembershipPlan($id)
@@ -136,14 +138,14 @@ class AdminController extends BaseController
             'amount' => $this->request->getPost('amount')
         ];
         $membership->update($id, $data);
-        return redirect()->to('/admin/membership_plans')->with('status', 'Membership Updated Successfully');
+        return redirect()->to('/admin/membership_plans')->with('status', 'Membership Fee Updated Successfully');
     }
      //delete membership plan from db
      public function deleteMembership($id)
      {
          $membership = new MembershipModel();
          $membership->delete($id);
-         return redirect()->to(uri: base_url('/admin/membership_plans'))->with('status', 'Student deleted successfully');
+         return redirect()->to(uri: base_url('/admin/membership_plans'))->with('status', 'Membership Fee deleted successfully');
      }
     //delete membership from db
     // public function delete($id)
@@ -164,4 +166,17 @@ class AdminController extends BaseController
     //         return redirect()->to(base_url('/admin/membership_plans'))->with('status', 'Membership not found');
     //     }
     // }
+    //pending payments view 
+    public function pendingPaymentView() {
+        $pending_payment = new PendingPaymentModel();
+        $data['pending_payment'] = $pending_payment->findAll();
+        return view('/admin/pending_payment', $data);
+    }
+
+    //past transaction view
+    public function paymentHistoryView() {
+        $past_transaction = new PastTransactionModel();
+        $data['past_transaction'] = $past_transaction->findAll();
+        return view('/admin/payment_history', $data);
+    }
 }

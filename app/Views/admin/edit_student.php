@@ -81,23 +81,8 @@
                         <li> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
                         <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
                             <ul class="submenu_class" style="display: none;">
-                                <li><a href="#"> Transaction History </a></li>
-                                <li><a href="#"> Pending Payments </a></li>
-                                <li><a href="#"> Invoice and Receipts </a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu"> <a href="#"><i class="fas fa-calendar-alt"></i> <span> Events & Activities </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a href="#"> Manage Events </a></li>
-                                <li><a href="#"> Event Registration </a></li>
-                                <li><a href="#"> Event History & Analytics </a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a href="#"> Membership Analytics </a></li>
-                                <li><a href="#"> Financial Reports </a></li>
-                                <li><a href="#"> Activity Reports </a></li>
+                                <li><a href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
+                                <li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -185,8 +170,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-sm float-right">Save Changes</button>
-                            <a href="<?= base_url('/admin/students') ?>" class="btn btn-secondary btn-sm float-right mr-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary btn-md float-right">Save Changes</button>
+                            <a href="<?= base_url('/admin/students') ?>" class="btn btn-secondary btn-md float-right mr-2">Cancel</a>
                         </form>
                     </div>
                 </div>

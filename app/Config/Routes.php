@@ -10,7 +10,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/','AuthenticationController::login');
 $routes->get('register','AuthenticationController::register');
 
-//admin routes
+//----- ADMIN ROUTES -----
 //admin main view | dashboard route
 $routes->get('/admin/index','AdminController::index');
 
@@ -50,3 +50,12 @@ $routes->post('/admin/update_membership/(:num)', 'AdminController::updateMembers
 
 //delete membership plan from db route
 $routes->delete('/admin/delete_membership/(:num)', 'AdminController::deleteMembership/$1');
+
+//pending payments view page route
+$routes->get('admin/pending_payment', 'AdminController::pendingPaymentView');
+
+//payment history view page route
+$routes->get('/admin/payment_history', 'AdminController::paymentHistoryView');
+
+//----- STUDENT ROUTES -----
+$routes->get('/student', 'StudentController::index');

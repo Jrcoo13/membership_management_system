@@ -75,23 +75,8 @@
                         <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
                         <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
                             <ul class="submenu_class" style="display: none;">
-                                <li><a href="all-customer.html"> Transaction History </a></li>
-                                <li><a href="edit-customer.html"> Pending Payments </a></li>
-                                <li><a href="add-customer.html"> Invoice and Receipts </a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu"> <a href="#"><i class="fas fa-calendar-alt"></i> <span> Events & Activities </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a href="all-rooms.html"> Manage Events </a></li>
-                                <li><a href="edit-room.html"> Event Registration </a></li>
-                                <li><a href="add-room.html"> Event History & Analytics </a></li>
-                            </ul>
-                        </li>
-                        <li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a href="expense-reports.html"> Membership Analytics </a></li>
-                                <li><a href="invoice-reports.html"> Financial Reports </a></li>
-                                <li><a href="invoice-reports.html"> Activity Reports </a></li>
+                                <li><a href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
+                                <li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -137,7 +122,7 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="hidden" name="_method" value="DELETE" id="delete_user_id"> 
+                                                    <input type="hidden" name="_method" value="DELETE" id="delete_user_id">
                                                     Are you sure you want to delete this student?
                                                 </div>
                                                 <div class="modal-footer">
@@ -150,7 +135,7 @@
                                 </div>
 
 
-                                <h4 class="page-title float-left">All Students</h4><a href="<?= base_url('admin/add_student') ?>" class="btn btn-primary btn-sm float-right">Add Student</a>
+                                <h4 class="page-title float-left">All Students</h4><a href="<?= base_url('admin/add_student') ?>" class="btn btn-primary btn-md float-right">Add Student</a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +144,7 @@
                     <div class="col-md-12 d-flex">
                         <div class="card card-table flex-fill">
                             <div class="card-body">
-                            <!-- <div class="export-buttons">
+                                <!-- <div class="export-buttons">
                                 </div> -->
                                 <div class="table-responsive">
                                     <table class="table table-hover table-center" id="table">
@@ -187,9 +172,9 @@
                                                         <td><?= $row['email'] ?></td>
                                                         <td><?= $row['sex'] ?></td>
                                                         <td class="text-center">
-                                                            <a href="<?= base_url('/admin/edit_student/' . $row['id']); ?>" class="btn btn-light btn-sm text-primary"><i class="fa-regular fa-pen-to-square"></i></a>
-                                                            <button class="btn btn-light btn-sm text-dark"><i class="fa-regular fa-eye"></i></button>
-                                                            <button class="btn btn-light btn-sm text-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="<?= $row['id'] ?>" data-name="<?= $row['name'] ?>">
+                                                            <a href="<?= base_url('/admin/edit_student/' . $row['id']); ?>" class="btn btn-light btn-sm border-0 text-primary bg-primary-light"><i class="fa-regular fa-pen-to-square"></i></a>
+                                                            <button class="btn btn-light btn-sm border-0 text-dark"><i class="fa-regular fa-eye"></i></button>
+                                                            <button class="btn btn-light btn-sm border-0 text-danger bg-danger-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="<?= $row['id'] ?>" data-name="<?= $row['name'] ?>">
                                                                 <i class="fa-regular fa-trash-can"></i>
                                                             </button>
                                                         </td>
@@ -217,6 +202,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script data-cfasync="false" src="<?= base_url('../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/popper.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('assets/plugins/slimscroll/jquery.slimscroll.min.js') ?>"></script>
+    <script src="<?= base_url('assets/plugins/raphael/raphael.min.js') ?>"></script>
+    <script src="<?= base_url('assets/plugins/morris/morris.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/chart.morris.js') ?>"></script>
+    <script src="<?= base_url('assets/js/script.js') ?>"></script>
 
     <script>
         $(document).ready(function() {
@@ -256,14 +250,14 @@
                         text: '<i class="fa fa-print"></i> Print'
                     }
                 ],
-                paging: false,  // Disable pagination (no "Previous", "Next", page numbers)
-                info: false, 
+                paging: false, // Disable pagination (no "Previous", "Next", page numbers)
+                info: false,
                 // pagingType: "simple_numbers", // Use simple pagination
                 // pageLength: 10 
             });
 
             table.buttons().container()
-                .appendTo('.export-buttons'); 
+                .appendTo('.export-buttons');
         });
     </script>
 </body>

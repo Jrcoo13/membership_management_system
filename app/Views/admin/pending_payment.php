@@ -68,11 +68,11 @@
                                 <li><a href="<?= base_url('admin/students') ?>"> All Students </a></li>
                             </ul>
                         </li>
-                        <li class="active"> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
+                        <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
                         <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
                             <ul class="submenu_class" style="display: none;">
-                            <li><a href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
-                            <li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
+                                <li><a class="active" href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
+                                <li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -118,8 +118,8 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="hidden" name="_method" value="DELETE" id="delete_user_id"> 
-                                                    Are you sure you want to delete this membership fee?
+                                                    <input type="hidden" name="_method" value="DELETE" id="delete_user_id">
+                                                    Are you sure you want to reject this student?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
@@ -129,7 +129,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <h4 class="page-title float-left">Membership Plans</h4><a href="<?= base_url('/admin/add_new_membership') ?>" class="btn btn-primary btn-md float-right">Add New Membership</a>
+                                <h4 class="page-title float-left">Pending Payments</h4>
                             </div>
                         </div>
                     </div>
@@ -142,36 +142,35 @@
                                     <table class="table table-hover table-center">
                                         <thead>
                                             <tr>
-                                                <th>Membership Name</th>
-                                                <th>Amount</th>
-                                                <th>Partial Payment</th>
-                                                <th>Creation Date</th>
+                                                <th>Student Name</th>
+                                                <th>Degree Program</th>
+                                                <th>Membership Fee</th>
+                                                <th>Amount Paid</th>
+                                                <th>Paid Date</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if (empty($memberships)): ?>
+                                            <?php if (empty($pending_payment)): ?>
                                                 <tr>
-                                                    <td colspan="6" class="text-center">No membership added yet</td>
+                                                    <td colspan="6" class="text-center">No pending payment yet</td>
                                                 </tr>
                                             <?php else: ?>
-                                                <?php foreach ($memberships as $row) : ?>
+                                                <?php foreach ($pending_payment as $row) : ?>
                                                     <tr>
+                                                        <td><?= $row['student_name'] ?></td>
+                                                        <td><?= $row['degree_program'] ?></td>
                                                         <td><?= $row['membership_name'] ?></td>
-                                                        <td><?= $row['amount'] ?></td>
-                                                        <td><?= $row['partial_payment']?></td>
-                                                        <td><?= $row['created_at'] ?></td>
+                                                        <td><?= $row['membership_amount'] ?></td>
+                                                        <td><?= $row['paid_date'] ?></td>
                                                         <td class="text-center">
-                                                            <a href="<?= base_url('/admin/edit_membership/' . $row['id']); ?>" class="btn btn-light btn-sm border-0 text-primary bg-primary-light"><i class="fa-regular fa-pen-to-square"></i></a>
-                                                            <button class="btn btn-light btn-sm border-0 text-danger bg-danger-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="<?= $row['id'] ?>">
-                                                                <i class="fa-regular fa-trash-can"></i>
-                                                            </button>
+                                                            <button class="btn btn-light btn-sm border-0 text-success bg-success-light">Approve</button>
+                                                            <button class="btn btn-light btn-sm border-0 text-danger bg-danger-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reject</button>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             <?php endif; ?>
                                         </tbody>
-
                                     </table>
                                 </div>
                             </div>
