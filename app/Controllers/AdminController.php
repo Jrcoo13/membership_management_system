@@ -13,7 +13,7 @@ class AdminController extends BaseController
     {
         $student = new StudentsModel();
         // Get the total number of students
-        $data['total_students'] = $student->countAll(); 
+        $data['total_students'] = $student->countAll();
         $data['student'] = $student->orderBy('join_date', 'DESC')  // Order by created_at or 'id' DESC
             ->limit(5)                      // Limit to the latest 5 records
             ->findAll();
@@ -85,6 +85,13 @@ class AdminController extends BaseController
         $student->update($id, $data);
         return redirect()->to('/admin/students')->with('status', 'Student Updated Successfully');
     }
+    //delete student from db
+    public function deleteStudent($id)
+    {
+        $student = new StudentsModel();
+        $student->delete($id);
+        return redirect()->to(uri: base_url('/admin/students'))->with('status', 'Student deleted successfully');
+    }
     //manage membership view
     public function membershipPlansView()
     {
@@ -93,11 +100,68 @@ class AdminController extends BaseController
         $data['memberships'] = $memberships->findAll();
         return view('/admin/membership_plans', $data);
     }
-    //delete student from db
-    public function deleteStudent($id)
+    //add new membership plans view
+    public function addNewMembershipPlan()
     {
-        $student = new StudentsModel();
-        $student->delete($id);
-        return redirect()->to(uri: base_url('/admin/students'))->with('status', 'Student deleted successfully');
+        return view('/admin/add_new_membership');
     }
+
+    //add new membership to db
+    public function addMembershipPlan()
+    {
+        $membership = new MembershipModel();
+        $data = [
+            'membership_name' => $this->request->getPost('membership_name'),
+            'partial_payment' => $this->request->getPost('partial_payment'),
+            'amount' => $this->request->getPost('amount')
+        ];
+        $membership->save($data);
+        return redirect()->to('/admin/membership_plans')->with('status', 'Membership Added Successfully');
+    }
+    //edit membership fee view
+    public function editMembershipPlan($id)
+    {
+        $membership = new MembershipModel();
+        $data['membership'] = $membership->find($id);
+        return view('/admin/edit_membership', $data);
+    }
+    //update membership data from db
+    public function updateMembershipPlan($id)
+    {
+        $membership = new MembershipModel();
+        $membership->find($id);
+        $data = [
+            'membership_name' => $this->request->getPost('membership_name'),
+            'partial_payment' => $this->request->getPost('partial_payment'),
+            'amount' => $this->request->getPost('amount')
+        ];
+        $membership->update($id, $data);
+        return redirect()->to('/admin/membership_plans')->with('status', 'Membership Updated Successfully');
+    }
+     //delete membership plan from db
+     public function deleteMembership($id)
+     {
+         $membership = new MembershipModel();
+         $membership->delete($id);
+         return redirect()->to(uri: base_url('/admin/membership_plans'))->with('status', 'Student deleted successfully');
+     }
+    //delete membership from db
+    // public function delete($id)
+    // {
+    //     $membership = new MembershipModel();
+    //     $membership->delete($id);
+    //     return redirect()->to(uri: base_url('/admin/membership_plans'))->with('status', 'Membership deleted successfully');
+    // }
+    // public function delete($id)
+    // {
+    //     $membership = new MembershipModel();
+
+    //     // Check if the ID is valid
+    //     if ($membership->find($id)) {
+    //         $membership->delete($id); // Delete the membership
+    //         return redirect()->to(base_url('/admin/membership_plans'))->with('status', 'Membership deleted successfully');
+    //     } else {
+    //         return redirect()->to(base_url('/admin/membership_plans'))->with('status', 'Membership not found');
+    //     }
+    // }
 }

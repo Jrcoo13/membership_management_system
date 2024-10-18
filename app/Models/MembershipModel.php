@@ -14,6 +14,7 @@ class MembershipModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'membership_name',
+        'partial_payment',
         'amount',
         'created_at'
     ];

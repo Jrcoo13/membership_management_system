@@ -10,6 +10,13 @@
 	<link rel="stylesheet" href="<?= base_url('assets/css/feathericon.min.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -105,7 +112,7 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header">180</h3>
+										<h3 class="card_widget_header"><?= esc($total_students); ?></h3>
 										<h6>Recent Payments</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
@@ -120,7 +127,7 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header">₱10,453</h3>
+										<h3 class="card_widget_header">₱120.00</h3>
 										<h6>Monthly Revenue</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
@@ -135,7 +142,7 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header">364</h3>
+										<h3 class="card_widget_header">100%</h3>
 										<h6>Payment Success</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
@@ -160,22 +167,25 @@
 											<tr>
 												<th>Student ID</th>
 												<th>Name</th>
-												<th>Email</th>
 												<th>Course & Year</th>
-												<th class="text-center">Transaction Date</th>
+												<th>Transaction Date</th>
 											</tr>
 										</thead>
-										<tbody>
-											<?php foreach ($student as $row) : ?>
-												<tr>
-													<td><?= $row['student_id'] ?></td>
-													<td><?= $row['name'] ?></td>
-													<td><?= $row['email'] ?></td>
-													<td><?= $row["course"] . ' ' . $row["year_level"] ?></td>
-													<td class="text-center"><?= $row['join_date'] ?></td>
-												</tr>
-											<?php endforeach; ?>
-										</tbody>
+										<?php if (empty($student)): ?>
+                                                <tr>
+                                                    <td colspan="6" class="text-center">No student added yet</td>
+                                                </tr>
+                                            <?php else: ?>
+                                                <?php foreach ($student as $row) : ?>
+                                                    <tr>
+                                                        <td><?= $row['student_id'] ?></td>
+                                                        <td><?= $row['name'] ?></td>
+                                                        <td><?= $row['course'] . ' ' . $row['year_level'] ?></td>
+                                                        <td><?= $row['join_date'] ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </tbody>
 									</table>
 								</div>
 							</div>

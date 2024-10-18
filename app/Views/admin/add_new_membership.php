@@ -75,10 +75,10 @@
 						<li class="list-divider"></li>
 						<li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a class="active" href="<?= base_url('admin/students') ?>"> All Students </a></li>
+								<li><a href="<?= base_url('admin/students') ?>"> All Students </a></li>
 							</ul>
 						</li>
-						<li> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
+						<li class="active"> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
 						<li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="#"> Transaction History </a></li>
@@ -111,83 +111,38 @@
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
-							<h3 class="page-title mt-5">Add Student</h3>
+							<h3 class="page-title mt-5">Add New Membership</h3>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<form action="<?= base_url('add_student_db') ?>" method="POST">
+						<form action="<?= base_url('/admin/add_membership') ?>" method="POST">
 							<div class="row formtype">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label for="first_name">First Name</label>
-										<input class="form-control" type="text" name="first_name" id="first_name">
+										<label for="membership_name">Membership Name</label>
+										<input class="form-control" type="text" name="membership_name" id="membership_name">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label for="last_name">Last Name</label>
-										<input class="form-control" type="text" name="last_name" id="last_name">
+										<label for="amount">Amount</label>
+										<input class="form-control" type="tel" name="amount" id="amount">
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label for="student_id">ID Number</label>
-										<input class="form-control" type="tel" name="student_id" id="student_id">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="course">Course</label>
-										<select class="form-control" name="course" id="course">
-											<option>Bachelor of Science in Information Technology</option>
-											<option>Bachelor of Science in Computer Science</option>
-											<option>Bachelor of Science in Information System</option>
-											<option>Bachelor of Science in Civil Engineering</option>
-											<option>Bachelor of Science in Industrial Technology</option>
+										<label for="partial_payment">Partial Payment</label>
+										<select class="form-control" name="partial_payment" id="partial_payment">
+											<option>Membership Fee</option>
+											<option>Others</option>
 										</select>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="year_level">Year Level</label>
-										<input class="form-control" type="tel" name="year_level" id="year_level">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="sex">Sex</label>
-										<select class="form-control" id="sex" name="sex">
-											<option>Male</option>
-											<option>Female</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="email">Email</label>
-										<input type="text" class="form-control" name="email" id="email">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="mobile_number">Phone Number</label>
-										<input type="tel" class="form-control" name="mobile_number" id="mobile_number">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="customFile">File Upload</label>
-										<div class="custom-file mb-3">
-											<input type="file" class="custom-file-input" id="customFile" name="filename">
-											<label class="custom-file-label" for="customFile">Choose file</label>
-										</div>
 									</div>
 								</div>
 							</div>
-							<button type="submit" class="btn btn-primary btn-sm float-right">Add Student</button>
-								<a href="<?= base_url('admin/students') ?>" class="btn btn-secondary btn-sm float-right mr-2">Cancel</a>
+							<button type="submit" class="btn btn-primary btn-sm float-right">Add Membership</button>
+								<a href="<?= base_url('/admin/membership_plans') ?>" class="btn btn-secondary btn-sm float-right mr-2">Cancel</a>
 						</form>
 					</div>
 				</div>

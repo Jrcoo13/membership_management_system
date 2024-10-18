@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- DataTables and Buttons CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+
     <style>
         a {
             text-decoration: none;
@@ -133,7 +137,7 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="hidden" name="_method" value="DELETE" id="delete_user_id"> <!-- Hidden field for student ID -->
+                                                    <input type="hidden" name="_method" value="DELETE" id="delete_user_id"> 
                                                     Are you sure you want to delete this student?
                                                 </div>
                                                 <div class="modal-footer">
@@ -155,8 +159,10 @@
                     <div class="col-md-12 d-flex">
                         <div class="card card-table flex-fill">
                             <div class="card-body">
+                            <!-- <div class="export-buttons">
+                                </div> -->
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-center">
+                                    <table class="table table-hover table-center" id="table">
                                         <thead>
                                             <tr>
                                                 <th>Student ID</th>
@@ -191,7 +197,6 @@
                                                 <?php endforeach; ?>
                                             <?php endif; ?>
                                         </tbody>
-
                                     </table>
                                 </div>
                             </div>
@@ -204,38 +209,61 @@
     <script src="<?= base_url('assets/js/jquery-3.5.1.min.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <!-- DataTables and Buttons JS -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
 
     <script>
         $(document).ready(function() {
-            $('#staticBackdrop').on('show.bs.modal', function(event) {
-                var button = $(event.relatedTarget);
-                var studentId = button.data('id'); // Get the student ID
-                var studentName = button.data('name'); // Get the student Name
-
-                // Set the form action to include the student ID in the URL
-                var form = $(this).find('form');
-                var actionUrl = '<?= base_url("/admin/delete_student/") ?>' + studentId;
-                form.attr('action', actionUrl); // Set the action URL dynamically
+            var table = $('#table').DataTable({
+                dom: 'Bfrtip', // Add buttons to the top of the table
+                // buttons: [
+                //     // 'copy', 
+                //     // 'csv', 
+                //     'excel', 
+                //     'pdf', 
+                //     'print'
+                // ],
+                buttons: [
+                    // {
+                    //     extend: 'copy',
+                    //     className: 'btn-copy',
+                    //     text: '<i class="fa fa-copy"></i> Copy'
+                    // },
+                    // {
+                    //     extend: 'csv',
+                    //     className: 'btn-csv',
+                    //     text: '<i class="fa fa-file-csv"></i> CSV'
+                    // },
+                    {
+                        extend: 'excel',
+                        className: 'btn-excel',
+                        text: '<i class="fa fa-file-excel"></i> Excel'
+                    },
+                    {
+                        extend: 'pdf',
+                        className: 'btn-pdf',
+                        text: '<i class="fa fa-file-pdf"></i> PDF'
+                    },
+                    {
+                        extend: 'print',
+                        className: 'btn-print',
+                        text: '<i class="fa fa-print"></i> Print'
+                    }
+                ],
+                paging: false,  // Disable pagination (no "Previous", "Next", page numbers)
+                info: false, 
+                // pagingType: "simple_numbers", // Use simple pagination
+                // pageLength: 10 
             });
-        });
-    </script>
 
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="<?= base_url('assets/js/popper.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/moment.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/select2.min.js') ?>"></script>
-    <script src="<?= base_url('assets/plugins/slimscroll/jquery.slimscroll.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/bootstrap-datetimepicker.min.js') ?>"></script>
-    <script src="<?= base_url('assets/plugins/datatables/datatables.min.js') ?>"></script>
-    <script src="<?= base_url('assets/js/script.js') ?>"></script>
-    <script>
-        $(function() {
-            $('#datetimepicker3').datetimepicker({
-                format: 'LT'
-
-            });
+            table.buttons().container()
+                .appendTo('.export-buttons'); 
         });
     </script>
 </body>
