@@ -7,12 +7,22 @@ use CodeIgniter\Router\RouteCollection;
  */
     
 //login and registration routes
-$routes->get('/','AuthenticationController::login');
-$routes->get('register','AuthenticationController::register');
+$routes->get('/','AuthenticationController::loginView');
+$routes->post('/login','AuthenticationController::login');
+
+//logout 
+$routes->get('logout', 'AuthenticationController::logout');
+
 
 //----- ADMIN ROUTES -----
 //admin main view | dashboard route
 $routes->get('/admin/index','AdminController::index');
+
+//admin profile page view route
+$routes->get('/admin/admin_profile', 'AdminController::adminProfileView');
+
+//admin edit personal information route
+$routes->post('update_admin_data/(:num)', 'AdminController::updateAdminData/$1');
 
 //manage student view route
 $routes->get('/admin/students','AdminController::students');
@@ -51,11 +61,12 @@ $routes->post('/admin/update_membership/(:num)', 'AdminController::updateMembers
 //delete membership plan from db route
 $routes->delete('/admin/delete_membership/(:num)', 'AdminController::deleteMembership/$1');
 
-//pending payments view page route
-$routes->get('admin/pending_payment', 'AdminController::pendingPaymentView');
-
 //payment history view page route
 $routes->get('/admin/payment_history', 'AdminController::paymentHistoryView');
 
+//pending payment view route
+$routes->get('admin/pending_payment', 'AdminController::pendingPaymentView');
+
 //----- STUDENT ROUTES -----
 $routes->get('/student', 'StudentController::index');
+

@@ -11,40 +11,19 @@
 	<link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        a {
-            text-decoration: none;
-        }
-    </style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style>
+		a {
+			text-decoration: none;
+		}
+	</style>
 </head>
 
 <body>
 	<div class="main-wrapper">
-		<div class="header">
-			<div class="header-left">
-				<a href="<?= base_url('/admin/index') ?>" class="logo"> <img src="<?= base_url('assets/img/logo.png') ?>" width="50" height="70" alt="logo"> <span class="logoclass text-dark">LSC</span> </a>
-				<a href="<?= base_url('/admin/index') ?>" class="logo logo-small"> <img src="<?= base_url('assets/img/logo.png') ?>" alt="Logo" width="30" height="30"> </a>
-			</div>
-			<a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left text-dark"></i> </a>
-			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
-			<ul class="nav user-menu">
-				<li class="nav-item dropdown has-arrow">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img class="rounded-circle" src="<?= base_url('assets/img/my_profile.jpeg') ?>" width="31" alt="Soeng Souy"></span> </a>
-					<div class="dropdown-menu">
-						<div class="user-header">
-							<div class="avatar avatar-sm"> <img src="<?= base_url('assets/img/my_profile.jpeg') ?>" alt="User Image" class="avatar-img rounded-circle"> </div>
-							<div class="user-text">
-								<h6>Jerico Ocal</h6>
-								<p class="text-muted mb-0">Administrator</p>
-							</div>
-						</div>
-							<a class="dropdown-item" href="profile.html">My Profile</a>
-							<a class="dropdown-item" href="<?= base_url('/') ?>">Logout</a>
-					</div>
-				</li>
-			</ul>
-		</div>
+		<!-- HEADER START -->
+		<?php include APPPATH . 'Views/admin/includes/header.php'; ?>
+		<!-- HEADER END -->
 		<div class="sidebar" id="sidebar">
 			<div class="sidebar-inner slimscroll">
 				<div id="sidebar-menu" class="sidebar-menu">
@@ -112,7 +91,13 @@
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header">₱120.00</h3>
+										<h3 class="card_widget_header">
+											<?php if ($monthly_revenue > 0): ?>
+												<?= '₱' . number_format($monthly_revenue, 2); ?>
+											<?php else: ?>
+												₱0.00
+											<?php endif; ?>
+										</h3>
 										<h6>Monthly Revenue</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
@@ -157,20 +142,20 @@
 											</tr>
 										</thead>
 										<?php if (empty($student)): ?>
-                                                <tr>
-                                                    <td colspan="6" class="text-center">No student added yet</td>
-                                                </tr>
-                                            <?php else: ?>
-                                                <?php foreach ($student as $row) : ?>
-                                                    <tr>
-                                                        <td><?= $row['student_id'] ?></td>
-                                                        <td><?= $row['name'] ?></td>
-                                                        <td><?= $row['course'] . ' ' . $row['year_level'] ?></td>
-                                                        <td><?= $row['join_date'] ?></td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </tbody>
+											<tr>
+												<td colspan="6" class="text-center">No student added yet</td>
+											</tr>
+										<?php else: ?>
+											<?php foreach ($student as $row) : ?>
+												<tr>
+													<td><?= $row['student_id'] ?></td>
+													<td><?= $row['name'] ?></td>
+													<td><?= $row['course'] . ' ' . $row['year_level'] ?></td>
+													<td><?= $row['join_date'] ?></td>
+												</tr>
+											<?php endforeach; ?>
+										<?php endif; ?>
+										</tbody>
 									</table>
 								</div>
 							</div>
@@ -181,7 +166,7 @@
 		</div>
 	</div>
 	<!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<script data-cfasync="false" src="<?= base_url('../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/jquery-3.5.1.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/popper.min.js') ?>"></script>

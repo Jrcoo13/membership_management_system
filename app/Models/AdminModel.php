@@ -4,38 +4,27 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PastTransactionModel extends Model
+class AdminModel extends Model
 {
-    protected $table            = 'payment_transaction';
+    protected $table            = 'admin';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'student_id',
-        'student_name',
-        'degree_program',
-        'membership_paid',
-        'amount_paid',
-        'paid_date',
-        'status'
+        'role',
+        'first_name',
+        'last_name',
+        'username',
+        'password',
+        'sex',
+        'birth_date',
+        'email',
+        'mobile_number',
+        'address',
+        'created_at'
     ];
-
-    // New method to calculate monthly revenue
-    public function getMonthlyRevenue()
-    {
-        // Get the current year and month
-        $currentMonth = date('m');
-        $currentYear = date('Y');
-
-        // Perform the query to sum the 'amount_paid' where the 'paid_date' is in the current month
-        return $this->selectSum('amount_paid')
-                    ->where('YEAR(paid_date)', $currentYear)
-                    ->where('MONTH(paid_date)', $currentMonth)
-                    ->first();  // Using first() to get a single result
-    }
-
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
