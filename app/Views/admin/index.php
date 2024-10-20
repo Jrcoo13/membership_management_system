@@ -149,9 +149,9 @@
 											<?php foreach ($student as $row) : ?>
 												<tr>
 													<td><?= $row['student_id'] ?></td>
-													<td><?= $row['name'] ?></td>
-													<td><?= $row['course'] . ' ' . $row['year_level'] ?></td>
-													<td><?= $row['join_date'] ?></td>
+													<td><?= $row['student_name'] ?></td>
+													<td><?= $row['degree_program'] ?></td>
+													<td><?= $row['transaction_date'] ?></td>
 												</tr>
 											<?php endforeach; ?>
 										<?php endif; ?>

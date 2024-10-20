@@ -14,14 +14,31 @@ class StudentsModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'student_id',
-        'name',
-        'course',
+        'student_name',
+        'degree_program',
         'year_level',
-        'sex',
         'email',
         'mobile_number',
-        'join_date',
+        'membership_paid',
+        'amount_paid',
+        'transaction_date',
+        'status'
     ];
+
+    // New method to calculate monthly revenue
+    public function getMonthlyRevenue()
+    {
+        // Get the current year and month
+        $currentMonth = date('m');
+        $currentYear = date('Y');
+
+        // Perform the query to sum the 'amount_paid' where the 'paid_date' is in the current month
+        return $this->selectSum('amount_paid')
+                    ->where('YEAR(transaction_date)', $currentYear)
+                    ->where('MONTH(transaction_date)', $currentMonth)
+                    ->first();  // Using first() to get a single result
+    }
+
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

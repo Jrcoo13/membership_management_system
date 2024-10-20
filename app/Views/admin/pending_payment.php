@@ -16,6 +16,8 @@
     <!-- DataTables and Buttons CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <style>
         a {
@@ -28,8 +30,8 @@
 
     <div class="main-wrapper">
         <!-- HEADER START -->
-		<?php include APPPATH . 'Views/admin/includes/header.php'; ?>
-		<!-- HEADER END -->
+        <?php include APPPATH . 'Views/admin/includes/header.php'; ?>
+        <!-- HEADER END -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
@@ -60,26 +62,22 @@
                         <div class="col-sm-12 mt-5">
                             <div class="mt-3">
                                 <!-- ALERT MESSAGE -->
-                                <?php
-                                if (session()->getFlashdata('status')) { ?>
-                                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                                        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                        </symbol>
-                                    </svg>
-                                    <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
-                                        <!-- Icon -->
-                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-                                            <use xlink:href="#check-circle-fill" />
-                                        </svg>
-                                        <!-- Text -->
-                                        <div><?php echo session()->getFlashdata('status'); ?></div>
-                                        <!-- Close Button -->
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                <?php
-                                }
-                                ?>
+                                <?php if (session()->getFlashdata('status')): ?>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function() {
+                                            // Trigger the SweetAlert
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Success',
+                                                text: '<?php echo session()->getFlashdata('status'); ?>',
+                                                confirmButtonText: 'OK',
+                                                confirmButtonColor: '#3085d6',
+                                                timer: 3000 // Auto close after 3 seconds
+                                            });
+                                        });
+                                    </script>
+                                <?php endif; ?>
+
 
                                 <!-- DELETE MODAL -->
                                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -132,15 +130,19 @@
                                                     <tr>
                                                         <td><?= $row['student_id'] ?></td>
                                                         <td><?= $row['student_name'] ?></td>
-                                                        <td><?= $row['degree_program'] ?></td>
-                                                        <td><?= $row['paid_date'] ?></td>
+                                                        <td><?= $row['degree_program']. ' ' .$row['year_level'] ?></td>
+                                                        <td><?= $row['transaction_date'] ?></td>
                                                         <td class="text-center">
-                                                            <a href="#" class="btn btn-light btn-sm border-0 text-success bg-success-light">
-                                                                Approve
-                                                            </a>
-                                                            <a href="#" class="btn btn-light btn-sm border-0 text-danger bg-danger-light">
-                                                                Reject
-                                                            </a>
+                                                            <form action="<?= base_url('approve_request/' . $row['id']) ?>" method="POST" class="d-inline-block">
+                                                                <button type="submit" class="btn btn-light btn-sm border-0 text-success bg-success-light">
+                                                                    Approve
+                                                                </button>
+                                                            </form>
+                                                            <form action="<?= base_url('reject_request/' . $row['id']) ?>" method="POST" class="d-inline-block">
+                                                                <button type="submit" class="btn btn-light btn-sm border-0 text-danger bg-danger-light">
+                                                                    Reject
+                                                                    </butto>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -155,6 +157,9 @@
             </div>
         </div>
     </div>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="<?= base_url('assets/js/jquery-3.5.1.min.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

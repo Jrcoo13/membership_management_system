@@ -12,9 +12,39 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Include Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 	<style>
 		a {
 			text-decoration: none;
+		}
+
+		.form-control {
+			cursor: pointer;
+			transition: border-color 0.3s;
+		}
+
+		.form-check-input:checked+.form-control {
+			border-color: #007bff;
+			/* Bootstrap primary color */
+			background-color: #e9f5ff;
+			/* Light blue for the selected state */
+		}
+
+		.form-check-input:checked+.form-control .bi-circle {
+			color: #007bff;
+			/* Color for the checked state */
+		}
+
+		.bi-circle {
+			color: #ccc;
+			/* Default color for the radio icon */
+		}
+
+		.form-check-input:checked+.form-control .bi-circle::before {
+			content: "\f192";
+			/* Unicode for filled circle icon */
+			font-family: "Bootstrap Icons";
 		}
 	</style>
 </head>
@@ -112,15 +142,6 @@
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label for="sex">Sex</label>
-										<select class="form-control" id="sex" name="sex" required>
-											<option>Male</option>
-											<option>Female</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
 										<label for="email">Email</label>
 										<input type="text" class="form-control" name="email" id="email" required>
 										<div class="invalid-feedback">
@@ -137,11 +158,52 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-12 text-end">
-							<button type="submit" class="btn btn-primary btn-md float-right">Add Student</button>
-							<a href="<?= base_url('admin/students') ?>" class="btn btn-secondary btn-md float-right mr-2">Cancel</a>
-							</div>
+
+								<div class="container mt-4">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="form-group position-relative">
+												<input class="form-check-input position-absolute" type="checkbox" name="option[]" id="membership1" value="membership1" style="display:none;">
+												<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership1').click();">
+													<span class="me-2">
+														<i class="bi bi-circle" id="icon-membership1"></i>
+													</span>
+													<span>Membership #1</span>
+												</div>
+											</div>
+										</div>
+
+										<!-- Option 2 -->
+										<div class="col-md-4">
+											<div class="form-group position-relative">
+												<input class="form-check-input position-absolute" type="checkbox" name="option[]" id="membership2" value="membership2" style="display:none;">
+												<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership2').click();">
+													<span class="me-2">
+														<i class="bi bi-circle" id="icon-membership2"></i>
+													</span>
+													<span>Membership #2</span>
+												</div>
+											</div>
+										</div>
+
+										<!-- Option 3 -->
+										<div class="col-md-4">
+											<div class="form-group position-relative">
+												<input class="form-check-input position-absolute" type="checkbox" name="option[]" id="membership3" value="membership3" style="display:none;">
+												<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership3').click();">
+													<span class="me-2">
+														<i class="bi bi-circle" id="icon-membership3"></i>
+													</span>
+													<span>Membership #3</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 text-end">
+									<button type="submit" class="btn btn-primary btn-md float-right">Add Student</button>
+									<a href="<?= base_url('admin/students') ?>" class="btn btn-secondary btn-md float-right mr-2">Cancel</a>
+								</div>
 						</form>
 					</div>
 				</div>
@@ -189,6 +251,21 @@
 					}, false)
 				})
 		})()
+	</script>
+
+	<script>
+		function selectAllRadios() {
+			const radios = document.querySelectorAll('input[type="radio"]');
+			const selectAll = document.getElementById('selectAll');
+
+			radios.forEach(radio => {
+				if (selectAll.checked) {
+					radio.checked = true;
+				} else {
+					radio.checked = false;
+				}
+			});
+		}
 	</script>
 </body>
 

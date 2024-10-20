@@ -16,6 +16,8 @@
     <!-- DataTables and Buttons CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <style>
         a {
@@ -28,8 +30,8 @@
 
     <div class="main-wrapper">
         <!-- HEADER START -->
-		<?php include APPPATH . 'Views/admin/includes/header.php'; ?>
-		<!-- HEADER END -->
+        <?php include APPPATH . 'Views/admin/includes/header.php'; ?>
+        <!-- HEADER END -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
@@ -60,50 +62,21 @@
                         <div class="col-sm-12 mt-5">
                             <div class="mt-3">
                                 <!-- ALERT MESSAGE -->
-                                <?php
-                                if (session()->getFlashdata('status')) { ?>
-                                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                                        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                        </symbol>
-                                    </svg>
-                                    <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
-                                        <!-- Icon -->
-                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
-                                            <use xlink:href="#check-circle-fill" />
-                                        </svg>
-                                        <!-- Text -->
-                                        <div><?php echo session()->getFlashdata('status'); ?></div>
-                                        <!-- Close Button -->
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-
-                                <!-- DELETE MODAL -->
-                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <form id="deleteStudentForm" method="POST">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Delete Confirmation</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <input type="hidden" name="_method" value="DELETE" id="delete_user_id">
-                                                    Are you sure you want to delete this student?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                                    <button type="submit" class="btn btn-primary">Yes, delete</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-
-
+                                <?php if (session()->getFlashdata('status')): ?>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function() {
+                                            // Trigger the SweetAlert
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Success',
+                                                text: '<?php echo session()->getFlashdata('status'); ?>',
+                                                confirmButtonText: 'OK',
+                                                confirmButtonColor: '#3085d6',
+                                                timer: 3000 // Auto close after 3 seconds
+                                            });
+                                        });
+                                    </script>
+                                <?php endif; ?>
                                 <h4 class="page-title float-left">All Students</h4><a href="<?= base_url('admin/add_student') ?>" class="btn btn-primary btn-md float-right">Add Student</a>
                             </div>
                         </div>
@@ -120,10 +93,8 @@
                                         <thead>
                                             <tr>
                                                 <th>Student ID</th>
-                                                <th>Name</th>
+                                                <th>Student Name</th>
                                                 <th>Course & Year</th>
-                                                <th>Email</th>
-                                                <th>Sex</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
                                         </thead>
@@ -136,14 +107,12 @@
                                                 <?php foreach ($student as $row) : ?>
                                                     <tr>
                                                         <td><?= $row['student_id'] ?></td>
-                                                        <td><?= $row['name'] ?></td>
-                                                        <td><?= $row['course'] . ' ' . $row['year_level'] ?></td>
-                                                        <td><?= $row['email'] ?></td>
-                                                        <td><?= $row['sex'] ?></td>
+                                                        <td><?= $row['student_name'] ?></td>
+                                                        <td><?= $row['degree_program'] . ' '. $row['year_level'] ?></td>
                                                         <td class="text-center">
                                                             <a href="<?= base_url('/admin/edit_student/' . $row['id']); ?>" class="btn btn-light btn-sm border-0 text-primary bg-primary-light"><i class="fa-regular fa-pen-to-square"></i></a>
                                                             <button class="btn btn-light btn-sm border-0 text-dark"><i class="fa-regular fa-eye"></i></button>
-                                                            <button class="btn btn-light btn-sm border-0 text-danger bg-danger-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="<?= $row['id'] ?>" data-name="<?= $row['name'] ?>">
+                                                            <button class="btn btn-light btn-sm border-0 text-danger bg-danger-light" onclick="confirmDelete(<?= $row['id'] ?>)">
                                                                 <i class="fa-regular fa-trash-can"></i>
                                                             </button>
                                                         </td>
@@ -160,6 +129,9 @@
             </div>
         </div>
     </div>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<?= base_url('assets/js/jquery-3.5.1.min.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -231,18 +203,59 @@
         });
     </script>
 
-    <script>
-        $(document).ready(function() {
-            $('#staticBackdrop').on('show.bs.modal', function(event) {
-                var button = $(event.relatedTarget);
-                var studentId = button.data('id'); // Get the student ID
+<script>
+        function confirmDelete(userId) {
+            const csrfToken = '<?= csrf_hash() ?>'; // Get CSRF token
+            const csrfName = '<?= csrf_token() ?>'; // Get CSRF token name
 
-                // Set the form action to include the student ID in the URL
-                var form = $(this).find('form');
-                var actionUrl = '<?= base_url("/admin/delete_student/") ?>' + studentId;
-                form.attr('action', actionUrl); // Set the action URL dynamically
+            // Show SweetAlert with warning icon
+            Swal.fire({
+                title: 'Delete Confirmation',
+                text: 'Are you sure you want to delete this student?',
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: '#6c757d',
+                confirmButtonColor: '#3085d6',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes, delete',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // AJAX DELETE request
+                    $.ajax({
+                        url: '<?= base_url("/admin/delete_student/") ?>' + userId,
+                        type: 'DELETE',
+                        data: {
+                            [csrfName]: csrfToken
+                        }, // Send CSRF token
+                        success: function(response) {
+                            if (response.success) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Student has been deleted.',
+                                    'success'
+                                ).then(() => {
+                                    location.reload(); // Reload the page
+                                });
+                            } else {
+                                Swal.fire(
+                                    'Error!',
+                                    'Failed to delete student. Please try again.',
+                                    'error'
+                                );
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            Swal.fire(
+                                'Error!',
+                                'Failed to delete student. Please try again.',
+                                'error'
+                            );
+                        }
+                    });
+
+                }
             });
-        });
+        }
     </script>
 </body>
 

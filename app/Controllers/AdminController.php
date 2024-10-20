@@ -7,7 +7,6 @@ use App\Models\PendingPaymentModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\StudentsModel;
 use App\Models\MembershipModel;
-use App\Models\PastTransactionModel;
 use App\Models\AdminModel;
 
 class AdminController extends BaseController
@@ -21,18 +20,20 @@ class AdminController extends BaseController
         if (!$user || $user['id'] < 1) {
             return redirect()->to(uri: base_url('/'));
         } else
+
             // Create an instance of the StudentsModel
             $student = new StudentsModel();
         // Get the total number of students
         $data['total_students'] = $student->countAll();
 
         // Get the latest 5 students, ordered by join date
-        $data['student'] = $student->orderBy('join_date', 'DESC')  // Order by created_at or 'id' DESC
-            ->limit(5)                      // Limit to the latest 5 records
+        $data['student'] = $student->orderBy('transaction_date', 'DESC')
+            ->where('status', 'Approved') //only return the data that has a 'Approved' status value
+            ->limit(5)  //limit the data to be return                    
             ->findAll();
 
         // Create an instance of the PastTransactionModel
-        $pastTransaction = new PastTransactionModel();
+        $pastTransaction = new StudentsModel();
         // Get the total revenue for the current month
         $monthlyRevenue = $pastTransaction->getMonthlyRevenue();
         // Add the monthly revenue to the data array
@@ -60,7 +61,7 @@ class AdminController extends BaseController
             'first_name' => $this->request->getPost('first_name'),
             'last_name' => $this->request->getPost('last_name'),
             'birth_date' => $this->request->getPost('birth_date'),
-            'sex' => $this->request->getPost('sex'),  
+            'sex' => $this->request->getPost('sex'),
             'email' => $this->request->getPost('email'),
             'mobile_number' => $this->request->getPost('mobile_number'),
             'address' => $this->request->getPost('address'),
@@ -83,7 +84,9 @@ class AdminController extends BaseController
     public function students()
     {
         $student = new StudentsModel();
-        $data['student'] = $student->findAll();
+        $data['student'] = $student
+            ->where('status', 'Approved')
+            ->findAll();
         return view('/admin/students', $data);
     }
 
@@ -108,15 +111,15 @@ class AdminController extends BaseController
         $student = new StudentsModel();
         $data = [
             'student_id' => $this->request->getPost('student_id'),
-            'name' => $this->request->getPost('first_name') . ' ' . $this->request->getPost('last_name'),
-            'course' => $this->request->getPost('course'),
+            'student_name' => $this->request->getPost('first_name') . ' ' . $this->request->getPost('last_name'),
+            'degree_program' => $this->request->getPost('course'),
             'year_level' => $this->request->getPost('year_level'),
-            'sex' => $this->request->getPost('sex'),
             'email' => $this->request->getPost('email'),
             'mobile_number' => $this->request->getPost('mobile_number'),
+            'status' => 'Processing'
         ];
         $student->save($data);
-        return redirect()->to('/admin/students')->with('status', 'Student Added Successfully');
+        return redirect()->to('/admin/students')->with('status', 'Student has been added.');
     }
 
     //edit student ui view
@@ -134,22 +137,32 @@ class AdminController extends BaseController
         $student->find($id);
         $data = [
             'student_id' => $this->request->getPost('student_id'),
-            'name' => $this->request->getPost('full_name'),
-            'course' => $this->request->getPost('course'),
+            'student_name' => $this->request->getPost('full_name'),
+            'degree_program' => $this->request->getPost('course'),
             'year_level' => $this->request->getPost('year_level'),
-            'sex' => $this->request->getPost('sex'),
             'email' => $this->request->getPost('email'),
             'mobile_number' => $this->request->getPost('mobile_number'),
         ];
         $student->update($id, $data);
-        return redirect()->to('/admin/students')->with('status', 'Student Updated Successfully');
+        return redirect()->to('/admin/students')->with('status', 'Student has been updated.');
     }
     //delete student from db
     public function deleteStudent($id)
     {
+
         $student = new StudentsModel();
-        $student->delete($id);
-        return redirect()->to(uri: base_url('/admin/students'))->with('status', 'Student deleted successfully');
+
+        // Attempt to delete the membership
+        if ($student->delete($id)) {
+            // Deletion was successful
+            return $this->response->setJSON(['success' => true]);
+        } else {
+            // Deletion failed
+            return $this->response->setJSON(['success' => false]);
+        }
+        // $student = new StudentsModel();
+        // $student->delete($id);
+        // return redirect()->to(uri: base_url('/admin/students'))->with('status', 'Student deleted successfully');
     }
     //manage membership view
     public function membershipPlansView()
@@ -198,31 +211,69 @@ class AdminController extends BaseController
         return redirect()->to('/admin/membership_plans')->with('status', 'Membership Fee Updated Successfully');
     }
     //delete membership plan from db
+    // Delete membership plan from db
     public function deleteMembership($id)
     {
         $membership = new MembershipModel();
-        $membership->delete($id);
-        return redirect()->to(uri: base_url('/admin/membership_plans'))->with('status', 'Membership Fee deleted successfully');
+
+        // Attempt to delete the membership
+        if ($membership->delete($id)) {
+            // Deletion was successful
+            return $this->response->setJSON(['success' => true]);
+        } else {
+            // Deletion failed
+            return $this->response->setJSON(['success' => false]);
+        }
     }
+
+
 
     //past transaction view
     public function paymentHistoryView()
     {
-        $past_transaction = new PastTransactionModel();
+        $past_transaction = new StudentsModel();
         $data['past_transaction'] = $past_transaction
-        ->whereIn('status', ['Approved','Rejected'])
-        ->findAll();
+            ->whereIn('status', ['Approved', 'Rejected'])
+            ->findAll();
         return view('/admin/payment_history', $data);
     }
 
     //pending payments view
     public function pendingPaymentView()
     {
-        $past_transaction = new PastTransactionModel();
+        $past_transaction = new StudentsModel();
         $data['pending_payment'] = $past_transaction
-        ->where('status', 'Processing') //get data that has a processing data on the status field
-        //->where('amount_paid', '0') //it also checks if the user is already paid
-        ->findAll();
+            ->where('status', 'Processing') //get data that has a processing data on the status field
+            //->where('amount_paid', '0') //it also checks if the user is already paid
+            ->findAll();
         return view('/admin/pending_payment', $data);
+    }
+
+    //approved membership payment
+    public function approveMembershipRequest($id)
+    {
+        $user_status = new StudentsModel();
+        //change the status to 'Approved'
+        $data = [
+            'status' => 'Approved',
+        ];
+        //update the user status
+        $user_status->update($id, $data);
+
+        return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been approved.');
+    }
+
+    //reject membership payment
+    public function rejectMembershipRequest($id)
+    {
+        $user_status = new StudentsModel();
+        //change the status to 'Approved'
+        $data = [
+            'status' => 'Rejected',
+        ];
+        //update the user status
+        $user_status->update($id, $data);
+
+        return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been rejected.');
     }
 }

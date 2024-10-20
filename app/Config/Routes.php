@@ -58,7 +58,7 @@ $routes->get('/admin/edit_membership/(:num)', 'AdminController::editMembershipPl
 //update membership 
 $routes->post('/admin/update_membership/(:num)', 'AdminController::updateMembershipPlan/$1');
 
-//delete membership plan from db route
+// delete membership plan from db route
 $routes->delete('/admin/delete_membership/(:num)', 'AdminController::deleteMembership/$1');
 
 //payment history view page route
@@ -66,6 +66,12 @@ $routes->get('/admin/payment_history', 'AdminController::paymentHistoryView');
 
 //pending payment view route
 $routes->get('admin/pending_payment', 'AdminController::pendingPaymentView');
+
+//approved post  | for updating the user status 
+$routes->post('approve_request/(:num)', 'AdminController::approveMembershipRequest/$1');
+
+//rejected post  | for updating the user status 
+$routes->post('reject_request/(:num)', 'AdminController::rejectMembershipRequest/$1');
 
 //----- STUDENT ROUTES -----
 $routes->get('/student', 'StudentController::index');

@@ -132,8 +132,8 @@
                                                     <tr>
                                                         <td><?= $row['student_id'] ?></td>
                                                         <td><?= $row['student_name'] ?></td>
-                                                        <td><?= $row['degree_program'] ?></td>
-                                                        <td><?= $row['paid_date'] ?></td>
+                                                        <td><?= $row['degree_program']. ' ' .$row['year_level'] ?></td>
+                                                        <td><?= $row['transaction_date'] ?></td>
                                                         <td class="text-center">
                                                             <?php if($row['status'] == 'Approved') : ?>
                                                             <span class="btn btn-light btn-sm border-0 text-success bg-success-light">

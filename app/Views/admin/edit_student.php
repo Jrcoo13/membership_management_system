@@ -65,7 +65,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="full_name">Full Name</label>
-                                        <input class="form-control" type="text" name="full_name" id="full_name" value="<?= $student['name'] ?>" required>
+                                        <input class="form-control" type="text" name="full_name" id="full_name" value="<?= $student['student_name'] ?>" required>
                                         <div class="invalid-feedback">
 											Please enter your name.
 										</div>
@@ -84,19 +84,19 @@
                                     <div class="form-group">
                                         <label for="course">Course</label>
                                         <select class="form-control" id="course" name="course" required>
-                                            <option <?php if ($student['course'] == "Bachelor of Science in Information Technology") echo "selected"; ?>>
+                                            <option <?php if ($student['degree_program'] == "Bachelor of Science in Information Technology") echo "selected"; ?>>
                                                 Bachelor of Science in Information Technology
                                             </option>
-                                            <option <?php if ($student['course'] == "Bachelor of Science in Computer Science") echo "selected"; ?>>
+                                            <option <?php if ($student['degree_program'] == "Bachelor of Science in Computer Science") echo "selected"; ?>>
                                                 Bachelor of Science in Computer Science
                                             </option>
-                                            <option <?php if ($student['course'] == "Bachelor of Science in Information System") echo "selected"; ?>>
+                                            <option <?php if ($student['degree_program'] == "Bachelor of Science in Information System") echo "selected"; ?>>
                                                 Bachelor of Science in Information System
                                             </option>
-                                            <option <?php if ($student['course'] == "Bachelor of Science in Civil Engineering") echo "selected"; ?>>
+                                            <option <?php if ($student['degree_program'] == "Bachelor of Science in Civil Engineering") echo "selected"; ?>>
                                                 Bachelor of Science in Civil Engineering
                                             </option>
-                                            <option <?php if ($student['course'] == "Bachelor of Science in Industrial Technology") echo "selected"; ?>>
+                                            <option <?php if ($student['degree_program'] == "Bachelor of Science in Industrial Technology") echo "selected"; ?>>
                                                 Bachelor of Science in Industrial Technology
                                             </option>
                                         </select>
@@ -109,19 +109,6 @@
                                         <div class="invalid-feedback">
 											Please enter your year level.
 										</div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="sex">Sex</label>
-                                        <select class="form-control" id="sex" name="sex" required>
-                                            <option <?php if ($student['sex'] == "Male") echo "selected"; ?>>
-                                                Male
-                                            </option>
-                                            <option <?php if ($student['sex'] == "Female") echo "selected"; ?>>
-                                                Female
-                                            </option>
-                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
