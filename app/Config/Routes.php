@@ -74,5 +74,5 @@ $routes->post('approve_request/(:num)', 'AdminController::approveMembershipReque
 $routes->post('reject_request/(:num)', 'AdminController::rejectMembershipRequest/$1');
 
 //----- STUDENT ROUTES -----
-$routes->get('/student', 'StudentController::index');
+$routes->get('/lsc_membership_form', 'StudentController::index');
 

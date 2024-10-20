@@ -161,6 +161,7 @@
 
 								<div class="container mt-4">
 									<div class="row">
+									<label for="course">Membership</label>
 										<div class="col-md-4">
 											<div class="form-group position-relative">
 												<input class="form-check-input position-absolute" type="checkbox" name="option[]" id="membership1" value="membership1" style="display:none;">

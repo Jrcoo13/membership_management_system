@@ -21,10 +21,13 @@ class AdminController extends BaseController
             return redirect()->to(uri: base_url('/'));
         } else
 
-            // Create an instance of the StudentsModel
-            $student = new StudentsModel();
-        // Get the total number of students
-        $data['total_students'] = $student->countAll();
+        // Create an instance of the StudentsModel
+        $student = new StudentsModel();
+        
+        // Get the total number of students with a status of 'Approved'
+        $data['total_students'] = $student
+            ->where('status', 'Approved')
+            ->countAllResults();
 
         // Get the latest 5 students, ordered by join date
         $data['student'] = $student->orderBy('transaction_date', 'DESC')

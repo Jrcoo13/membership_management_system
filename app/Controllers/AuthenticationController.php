@@ -10,7 +10,14 @@ class AuthenticationController extends BaseController
 {
     public function loginView()
     {
-        return view('login');
+        // Check if user is logged in and session has user data
+        $user = session()->get('user');
+
+        // If user is not logged in or does not have a valid ID, redirect to the home page
+        if (!$user || $user['id'] < 1) {
+            return view('login');
+        } else
+        return redirect()->to(uri: base_url('/admin/index'));
     }
     public function login()
     {

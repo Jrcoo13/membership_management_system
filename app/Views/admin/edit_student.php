@@ -64,7 +64,7 @@
                             <div class="row formtype">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="full_name">Full Name</label>
+                                        <label for="full_name">Student Name</label>
                                         <input class="form-control" type="text" name="full_name" id="full_name" value="<?= $student['student_name'] ?>" required>
                                         <div class="invalid-feedback">
 											Please enter your name.
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="course">Course</label>
+                                        <label for="course">Degree Program</label>
                                         <select class="form-control" id="course" name="course" required>
                                             <option <?php if ($student['degree_program'] == "Bachelor of Science in Information Technology") echo "selected"; ?>>
                                                 Bachelor of Science in Information Technology
@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="mobile_number">Phone Number</label>
+                                        <label for="mobile_number">Mobile Number</label>
                                         <input type="tel" class="form-control" name="mobile_number" id="mobile_number" value="<?= $student['mobile_number'] ?>" required>
                                         <div class="invalid-feedback">
 											Please provide a valid mobile number.
