@@ -18,6 +18,9 @@ $routes->get('logout', 'AuthenticationController::logout');
 //admin main view | dashboard route
 $routes->get('/admin/index','AdminController::index');
 
+//admin update password route
+$routes->post('/admin/update_password/(:num)', 'AdminController::updateAdminPassword/$1');
+
 //admin profile page view route
 $routes->get('/admin/admin_profile', 'AdminController::adminProfileView');
 
@@ -44,7 +47,6 @@ $routes->delete('/admin/delete_student/(:num)', 'AdminController::deleteStudent/
 
 //membership plans view route
 $routes->get('/admin/membership_plans', 'AdminController::membershipPlansView');
-
 
 //add new membership plans route
 $routes->get('/admin/add_new_membership', 'AdminController::addNewMembershipPlan');
@@ -73,6 +75,9 @@ $routes->post('approve_request/(:num)', 'AdminController::approveMembershipReque
 //rejected post  | for updating the user status 
 $routes->post('reject_request/(:num)', 'AdminController::rejectMembershipRequest/$1');
 
-//----- STUDENT ROUTES -----
-$routes->get('/lsc_membership_form', 'StudentController::index');
+//----- LSC Membership Form ROUTES -----
+$routes->get('/lsc_membership_form', 'LSCFormController::index');
+
+//submit membership form
+$routes->post('/submit_form', 'LSCFormController::submitForm');
 

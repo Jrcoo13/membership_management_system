@@ -73,10 +73,22 @@
   margin-top: 5px;
 }
 
-.container form .row .col .inputBox img {
-  height: 34px;
+.container form .row .col .inputBox .payment-container {
+  padding: 20px 50px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
   margin-top: 5px;
-  filter: drop-shadow(0 0 1px #000);
+  margin-bottom: 2rem;
+  animation: all 1s ease;
+}
+
+.container form .row .col .inputBox .payment-container:hover {
+  background-color: #000;
+}
+.container form .row .col .inputBox .payment-container img{
+  padding: 0;
+  height: 25px;
 }
 
 .container form .submit-btn {
@@ -93,3 +105,31 @@
   background: #2ecc71;
 }
 
+
+.form-control {
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.form-check-input:checked+.form-control {
+  border-color: #007bff;
+  /* Bootstrap primary color */
+  background-color: #e9f5ff;
+  /* Light blue for the selected state */
+}
+
+.form-check-input:checked+.form-control .bi-circle {
+  color: #007bff;
+  /* Color for the checked state */
+}
+
+.bi-circle {
+  color: #ccc;
+  /* Default color for the radio icon */
+}
+
+.form-check-input:checked+.form-control .bi-circle::before {
+  content: "\f192";
+  /* Unicode for filled circle icon */
+  font-family: "Bootstrap Icons";
+}

@@ -38,18 +38,11 @@
                     <ul>
                         <li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                         <li class="list-divider"></li>
-                        <li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a class="active" href="<?= base_url('admin/students') ?>"> All Students </a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
-                        <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
-                                <li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
-                            </ul>
-                        </li>
+                        <li class="active"> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+                        <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
+                        <li class="list-divider"></li>
+                        <li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
+						<li> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
                     </ul>
                 </div>
             </div>
@@ -157,7 +150,7 @@
     <script>
         $(document).ready(function() {
             var table = $('#table').DataTable({
-                dom: 'Bfrtip', // Add buttons to the top of the table
+                dom: 'Bfrtip', 
                 // buttons: [
                 //     // 'copy', 
                 //     // 'csv', 
@@ -192,10 +185,8 @@
                         text: '<i class="fa fa-print"></i> Print'
                     }
                 ],
-                paging: false, // Disable pagination (no "Previous", "Next", page numbers)
+                paging: false,
                 info: false,
-                // pagingType: "simple_numbers", // Use simple pagination
-                // pageLength: 10 
             });
 
             table.buttons().container()

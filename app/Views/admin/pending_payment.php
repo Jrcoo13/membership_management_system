@@ -38,18 +38,11 @@
                     <ul>
                         <li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                         <li class="list-divider"></li>
-                        <li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a class="active" href="<?= base_url('admin/students') ?>"> All Students </a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
-                        <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a class="active" href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
-                                <li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
-                            </ul>
-                        </li>
+                        <li> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+                        <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
+                        <li class="list-divider"></li>
+                        <li class="active"> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
+						<li> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
                     </ul>
                 </div>
             </div>

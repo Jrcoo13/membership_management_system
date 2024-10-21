@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Students</title>
+	<title>Membership - Add</title>
 	<link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/logo.png') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/feathericon.min.css') ?>">
@@ -31,18 +31,11 @@
 					<ul>
 						<li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
 						<li class="list-divider"></li>
-						<li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="<?= base_url('admin/students') ?>"> All Students </a></li>
-							</ul>
-						</li>
-						<li class="active"> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
-						<li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
-								<li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
-							</ul>
-						</li>
+						<li> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+						<li class="active"> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
+						<li class="list-divider"></li>
+						<li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
+						<li> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -74,7 +67,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="amount">Amount</label>
-										<input class="form-control" type="tel" name="amount" id="amount" required>
+										<input class="form-control" type="number" name="amount" id="amount" required>
 										<div class="invalid-feedback">
 											Please enter the amount.
 										</div>

@@ -32,18 +32,11 @@
                     <ul>
                         <li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                         <li class="list-divider"></li>
-                        <li class="submenu"> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a href="<?= base_url('admin/students') ?>"> All Students </a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="far fa-money-bill-alt"></i> <span> Membership Plans </span></a></li>
-                        <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
-                            <ul class="submenu_class" style="display: none;">
-                                <li><a href="<?= base_url('/admin/pending_payment') ?>"> Pending Payments </a></li>
-                                <li><a href="<?= base_url('/admin/payment_history') ?>"> Payment History </a></li>
-                            </ul>
-                        </li>
+                        <li> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+                        <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
+                        <li class="list-divider"></li>
+                        <li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
+                        <li> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
                     </ul>
                 </div>
             </div>
@@ -53,27 +46,38 @@
                 <div class="page-header mt-5">
                     <div class="row">
                         <!-- ALERT MESSAGE -->
-                        <?php if (session()->getFlashdata('status')): ?>
-                                    <script>
-                                        document.addEventListener("DOMContentLoaded", function() {
-                                            // Trigger the SweetAlert
-                                            Swal.fire({
-                                                icon: 'success',
-                                                title: 'Success',
-                                                text: '<?php echo session()->getFlashdata('status'); ?>',
-                                                confirmButtonText: 'OK',
-                                                confirmButtonColor: '#3085d6',
-                                                timer: 3000 // Auto close after 3 seconds
-                                            });
-                                        });
-                                    </script>
-                                <?php endif; ?>
+                        <?php if (session()->getFlashdata('success')): ?>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    // Trigger the SweetAlert
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Success',
+                                        text: '<?php echo session()->getFlashdata('success'); ?>',
+                                        confirmButtonText: 'OK',
+                                        confirmButtonColor: '#3085d6',
+                                        timer: 3000
+                                    });
+                                });
+                            </script>
+                        <?php endif; ?>
+                        <?php if (session()->getFlashdata('error')): ?>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    // Trigger the SweetAlert
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error',
+                                        text: '<?php echo session()->getFlashdata('error'); ?>',
+                                        confirmButtonText: 'OK',
+                                        confirmButtonColor: '#3085d6',
+                                        timer: 3000 // Auto close after 3 seconds
+                                    });
+                                });
+                            </script>
+                        <?php endif; ?>
                         <div class="col">
                             <h3 class="page-title">Profile</h3>
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Profile</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -82,7 +86,9 @@
                         <div class="profile-header">
                             <div class="row align-items-center">
                                 <div class="col-auto profile-image">
-                                    <a href="#"> <img class="rounded-circle" alt="User Image" src="<?= base_url('assets/img/my_profile.jpeg') ?>"> </a>
+                                    <a href="#"> <img class="rounded-circle" alt="User Image" src="<?= session()->get('user')['profile_picture']
+                                                                                                        ? base_url('upload/' . session()->get('user')['profile_picture'])
+                                                                                                        : base_url('assets/img/default_profile.png') ?>"> </a>
                                 </div>
                                 <div class="col ml-md-n2 profile-user-info text-start">
                                     <h4 class="user-name mb-3"><?= session()->get('user')['first_name'] . ' ' . session()->get('user')['last_name'] ?></h4>
@@ -140,7 +146,7 @@
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="<?= base_url('update_admin_data/' . session()->get('user')['id']) ?>" method="POST" class="row g-3 needs-validation" novalidate>
+                                                        <form action="<?= base_url('update_admin_data/' . session()->get('user')['id']) ?>" method="POST" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
                                                             <div class="row form-row">
                                                                 <div class="col-12 col-sm-6">
                                                                     <div class="form-group">
@@ -196,7 +202,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-12 col-sm-12">
+                                                                <div class="col-12 col-sm-6">
                                                                     <div class="form-group">
                                                                         <label>Address</label>
                                                                         <input type="invalid-feedback" name="address" class="form-control" value="<?= session()->get('user')['address'] ?>" required>
@@ -205,7 +211,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- <div class="col-12 col-sm-6">
+                                                                <div class="col-12 col-sm-6">
                                                                     <div class="form-group">
                                                                         <label for="profile_picture">Profile Picture</label>
                                                                         <div class="custom-file mb-3">
@@ -213,7 +219,7 @@
                                                                             <label class="custom-file-label" for="profile_picture">Choose file</label>
                                                                         </div>
                                                                     </div>
-                                                                </div> -->
+                                                                </div>
                                                             </div>
                                                             <div class="col-12 text-end">
                                                                 <button type="button" class="btn btn-secondary btn-md" data-dismiss="modal" aria-label="Close">Cancel</button>
@@ -233,18 +239,27 @@
                                         <h5 class="card-title">Change Password</h5>
                                         <div class="row">
                                             <div class="col-md-10 col-lg-6">
-                                                <form>
+                                                <form action="<?= base_url('/admin/update_password/' . session()->get('user')['id']) ?>" method="POST" class="needs-validation" novalidate>
                                                     <div class="form-group">
-                                                        <label>Old Password</label>
-                                                        <input type="password" class="form-control">
+                                                        <label for="password">Old Password</label>
+                                                        <input type="password" name="password" class="form-control" id="password" required>
+                                                        <div class="invalid-feedback">
+                                                            Please enter your current password.
+                                                        </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>New Password</label>
-                                                        <input type="password" class="form-control">
+                                                        <label for="new_password">New Password</label>
+                                                        <input type="password" name="new_password" class="form-control" id="new_password" required>
+                                                        <div class="invalid-feedback">
+                                                            Please enter your new password.
+                                                        </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Confirm Password</label>
-                                                        <input type="password" class="form-control">
+                                                        <label for="confirm_password">Confirm Password</label>
+                                                        <input type="password" name="confirm_password" class="form-control" id="confirm_password" required>
+                                                        <div class="invalid-feedback">
+                                                            Please re-enter your new password.
+                                                        </div>
                                                     </div>
                                                     <button class="btn btn-primary" type="submit">Save Changes</button>
                                                 </form>

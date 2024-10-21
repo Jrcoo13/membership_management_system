@@ -21,9 +21,9 @@ class AdminController extends BaseController
             return redirect()->to(uri: base_url('/'));
         } else
 
-        // Create an instance of the StudentsModel
-        $student = new StudentsModel();
-        
+            // Create an instance of the StudentsModel
+            $student = new StudentsModel();
+
         // Get the total number of students with a status of 'Approved'
         $data['total_students'] = $student
             ->where('status', 'Approved')
@@ -46,6 +46,37 @@ class AdminController extends BaseController
         return view('/admin/index', $data);
     }
 
+    //update admin password
+    public function updateAdminPassword($id)
+    {
+        $admin = new AdminModel();
+
+        $currentPassword = $this->request->getPost('password');
+        $newPassword = $this->request->getPost('new_password');
+        $confirmPassword = $this->request->getPost('confirm_password');
+
+        //checks if the password was match to the current password
+        if (password_verify($currentPassword, session()->get('user')['password'])) {
+
+            //checks if the new and confirm password is match
+            if ($newPassword === $confirmPassword) {
+                $data = [
+                    'password' => password_hash($newPassword, PASSWORD_DEFAULT),
+                ];
+                //update the admin password
+                $admin->update($id, $data);
+                // Updated password was successful
+                return redirect()->to('/admin/admin_profile')->with('success', 'Password was successfully updated');
+            } else {
+                // Update password failed
+                return redirect()->to('/admin/admin_profile')->with('error', 'Password did not matched! Please try again.');
+            }
+        } else {
+            // Update password failed
+            return redirect()->to('/admin/admin_profile')->with('error', 'Incorrect Password');
+        }
+    }
+
     //admin profile page view
     public function adminProfileView()
     {
@@ -56,8 +87,18 @@ class AdminController extends BaseController
     {
         $admin = new AdminModel();
 
-        // Fetch the existing admin details before the update
-        // $existingAdmin = $admin->find($id);
+        // Fetch current admin data to preserve the current profile picture if no new one is uploaded
+        $currentAdmin = $admin->find($id);
+
+        $img = $this->request->getFile('profile_picture');
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            // If a valid image is uploaded, generate a random name and move the file
+            $validImg = $img->getRandomName();
+            $img->move('upload/', $validImg);
+        } else {
+            // If no new image is uploaded, keep the existing profile picture
+            $validImg = $currentAdmin['profile_picture'];
+        }
 
         // Prepare the data for update
         $data = [
@@ -68,6 +109,7 @@ class AdminController extends BaseController
             'email' => $this->request->getPost('email'),
             'mobile_number' => $this->request->getPost('mobile_number'),
             'address' => $this->request->getPost('address'),
+            'profile_picture' => $validImg
         ];
 
         // Update the admin data in the database

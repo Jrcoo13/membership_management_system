@@ -23,6 +23,7 @@ class AdminModel extends Model
         'email',
         'mobile_number',
         'address',
+        'profile_picture',
         'created_at'
     ];
 

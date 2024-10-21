@@ -7,10 +7,14 @@
     <a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
     <ul class="nav user-menu">
         <li class="nav-item dropdown has-arrow">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img class="rounded-circle" src="<?= base_url('assets/img/my_profile.jpeg') ?>" width="31" alt="Soeng Souy"></span> </a>
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img class="rounded-circle" src="<?= session()->get('user')['profile_picture']
+                                                                                                                                                ? base_url('upload/' . session()->get('user')['profile_picture'])
+                                                                                                                                                : base_url('assets/img/default_profile.png') ?>" width="31"></span> </a>
             <div class="dropdown-menu">
                 <div class="user-header">
-                    <div class="avatar avatar-sm"> <img src="<?= base_url('assets/img/my_profile.jpeg') ?>" alt="User Image" class="avatar-img rounded-circle"> </div>
+                    <div class="avatar avatar-sm"> <img src="<?= session()->get('user')['profile_picture']
+                                                                    ? base_url('upload/' . session()->get('user')['profile_picture'])
+                                                                    : base_url('assets/img/default_profile.png') ?>" alt="User Image" class="avatar-img rounded-circle"> </div>
                     <div class="user-text">
                         <h6><?= session()->get('user')['first_name'] . ' ' . session()->get('user')['last_name'] ?></h6>
                         <p class="text-muted mb-0"><?= session()->get('user')['role'] ?></p>

@@ -1026,8 +1026,8 @@ button.bg-danger:hover {
 .nav-tabs.nav-tabs-solid > li > a.active,
 .nav-tabs.nav-tabs-solid > li > a.active:hover,
 .nav-tabs.nav-tabs-solid > li > a.active:focus {
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #0275d8;
+  border-color: #0275d8;
   color: #fff;
 }
 .nav-tabs.nav-tabs-solid.nav-tabs-rounded {
@@ -1469,7 +1469,7 @@ button.bg-danger:hover {
   padding: 10px 15px;
 }
 .user-menu .dropdown-menu .dropdown-item:hover {
-  color: #009688;
+  color: #000;
 }
 .header .dropdown-menu > li > a:focus,
 .header .dropdown-menu > li > a:hover {
