@@ -31,7 +31,12 @@
 					<ul>
 						<li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
 						<li class="list-divider"></li>
-						<li> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+						<li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" style="display: none;">
+								<li><a href="<?= base_url('admin/students') ?>"> All Student </a></li>
+								<li><a href="<?= base_url('admin/add_student') ?>"> Add Student </a></li>
+							</ul>
+						</li>
 						<li class="active"> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
 						<li class="list-divider"></li>
 						<li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
@@ -76,7 +81,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="partial_payment">Partial Payment</label>
-										<select class="form-control" id="partial_payment" name="partial_payment" value="<?= $membership['partial_payment'] ?>" required>
+										<select class="form-select" id="partial_payment" name="partial_payment" value="<?= $membership['partial_payment'] ?>" required>
 											<option <?php if ($membership['partial_payment'] == "Membership Fee") echo "selected"; ?>>
 												Membership Fee
 											</option>

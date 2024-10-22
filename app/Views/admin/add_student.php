@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>Students - Add</title>
+	<title>Add Student</title>
 	<link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/logo.png') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/feathericon.min.css') ?>">
@@ -14,6 +14,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<!-- Include Bootstrap Icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+	<!-- SweetAlert2 CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 	<style>
 		a {
 			text-decoration: none;
@@ -61,7 +63,12 @@
 					<ul>
 						<li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
 						<li class="list-divider"></li>
-						<li class="active"> <a href="<?= base_url('admin/students') ?>?"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+						<li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" style="display: none;">
+								<li><a href="<?= base_url('admin/students') ?>"> All Student </a></li>
+								<li><a class="active" href="<?= base_url('admin/add_student') ?>"> Add Student </a></li>
+							</ul>
+						</li>
 						<li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
 						<li class="list-divider"></li>
 						<li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
@@ -77,6 +84,37 @@
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
+							<!-- ALERT MESSAGE -->
+							<?php if (session()->getFlashdata('success')): ?>
+								<script>
+									document.addEventListener("DOMContentLoaded", function() {
+										// Trigger the SweetAlert
+										Swal.fire({
+											icon: 'success',
+											title: 'Success',
+											text: '<?php echo session()->getFlashdata('success'); ?>',
+											confirmButtonText: 'OK',
+											confirmButtonColor: '#3085d6',
+											timer: 3000
+										});
+									});
+								</script>
+							<?php endif; ?>
+							<?php if (session()->getFlashdata('error')): ?>
+								<script>
+									document.addEventListener("DOMContentLoaded", function() {
+										// Trigger the SweetAlert
+										Swal.fire({
+											icon: 'error',
+											title: 'Error',
+											text: '<?php echo session()->getFlashdata('error'); ?>',
+											confirmButtonText: 'OK',
+											confirmButtonColor: '#3085d6',
+											timer: 3000 // Auto close after 3 seconds
+										});
+									});
+								</script>
+							<?php endif; ?>
 							<h3 class="page-title mt-5">Add Student</h3>
 						</div>
 					</div>
@@ -85,6 +123,9 @@
 					<div class="col-lg-12">
 						<form action="<?= base_url('add_student_db') ?>" method="POST" class="row g-3 needs-validation" novalidate>
 							<div class="row formtype">
+								<div class="col-12 mb-3">
+									<h5>Personal Information</h5>
+								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="first_name" class="form-label">First name</label>
@@ -106,7 +147,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="student_id">ID Number</label>
-										<input class="form-control" type="tel" name="student_id" id="student_id" required>
+										<input class="form-control" type="number" name="student_id" id="student_id" required>
 										<div class="invalid-feedback">
 											Please enter your student id.
 										</div>
@@ -115,7 +156,7 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="course">Course</label>
-										<select class="form-control" name="course" id="course" required>
+										<select class="form-select" name="course" id="course" required>
 											<option>Bachelor of Science in Information Technology</option>
 											<option>Bachelor of Science in Computer Science</option>
 											<option>Bachelor of Science in Information System</option>
@@ -126,17 +167,38 @@
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
+										<label for="section">Section</label>
+										<select class="form-select" name="section" id="section" required>
+											<option>A</option>
+											<option>B</option>
+											<option>C</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
 										<label for="year_level">Year Level</label>
-										<input class="form-control" type="tel" name="year_level" id="year_level" required>
-										<div class="invalid-feedback">
-											Please enter your year level.
-										</div>
+										<select class="form-select" name="year_level" id="year_level" required>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="semester">Semester</label>
+										<select class="form-select" name="semester" id="semester" required>
+											<option>1</option>
+											<option>2</option>
+										</select>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="email">Email</label>
-										<input type="text" class="form-control" name="email" id="email" required>
+										<input type="email" class="form-control" name="email" id="email" required>
 										<div class="invalid-feedback">
 											Please provide a valid email address.
 										</div>
@@ -145,52 +207,53 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="mobile_number">Phone Number</label>
-										<input type="tel" class="form-control" name="mobile_number" id="mobile_number" required>
+										<input type="number" class="form-control" name="mobile_number" id="mobile_number" required>
 										<div class="invalid-feedback">
 											Please provide a valid mobile number.
 										</div>
 									</div>
 								</div>
-
-								<div class="container mt-4">
+								<div class="col-12 mb-3 mt-3">
+									<h5>Memberships</h5>
+								</div>
+								<div class="container">
 									<div class="row">
-									<label for="course">Membership</label>
-										<div class="col-md-4">
-											<div class="form-group position-relative">
-												<input class="form-check-input position-absolute" type="checkbox" name="option[]" id="membership1" value="membership1" style="display:none;">
-												<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership1').click();">
-													<span class="me-2">
-														<i class="bi bi-circle" id="icon-membership1"></i>
-													</span>
-													<span>Membership #1</span>
-												</div>
-											</div>
-										</div>
+										<?php foreach ($memberships as $row): ?>
+											<div class="col-md-3">
+												<div class="form-group position-relative">
+													<!-- Hidden checkbox that will hold the actual values -->
+													<input class="form-check-input position-absolute" type="checkbox" name="membership_name[]" value="<?= $row['id'] ?>" id="membership<?= $row['id'] ?>" style="display: none;">
 
-										<!-- Option 2 -->
-										<div class="col-md-4">
-											<div class="form-group position-relative">
-												<input class="form-check-input position-absolute" type="checkbox" name="option[]" id="membership2" value="membership2" style="display:none;">
-												<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership2').click();">
-													<span class="me-2">
-														<i class="bi bi-circle" id="icon-membership2"></i>
-													</span>
-													<span>Membership #2</span>
+													<!-- Div styled as a checkbox -->
+													<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership<?= $row['id'] ?>').click();">
+														<span class="me-2">
+															<i class="bi bi-circle" id="icon-membership<?= $row['id'] ?>"></i>
+														</span>
+														<span><?= $row['membership_name'] . ' ' ?><span>&#8369;<?= $row['amount'] ?></span></span>
+													</div>
 												</div>
 											</div>
-										</div>
-
-										<!-- Option 3 -->
-										<div class="col-md-4">
-											<div class="form-group position-relative">
-												<input class="form-check-input position-absolute" type="checkbox" name="option[]" id="membership3" value="membership3" style="display:none;">
-												<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership3').click();">
-													<span class="me-2">
-														<i class="bi bi-circle" id="icon-membership3"></i>
-													</span>
-													<span>Membership #3</span>
-												</div>
-											</div>
+										<?php endforeach; ?>
+									</div>
+									<div class="invalid-feedback">
+										Please provide a valid mobile number.
+									</div>
+								</div>
+								<div class="col-12 mb-3 mt-3">
+									<h5>Payment</h5>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="total_amount" class="form-label">Total Amount</label>
+										<input type="text" class="form-control" name="total_amount" id="total_amount" aria-label="Disabled input example" disabled readonly>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="amount_paid" class="form-label">Amount Paid</label>
+										<input type="number" class="form-control" name="amount_paid" id="amount_paid" required>
+										<div class="invalid-feedback">
+											Please enter the amount paid.
 										</div>
 									</div>
 								</div>
@@ -204,7 +267,8 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- SweetAlert2 CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!-- Bootstrap Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<script data-cfasync="false" src="<?= base_url('../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') ?>"></script>
@@ -260,6 +324,99 @@
 				}
 			});
 		}
+	</script>
+
+	<!-- handle the total amount membership selected  -->
+	<script>
+		$(document).ready(function() {
+			// Function to update the total amount when a membership is selected or deselected
+			$('.form-check-input').change(function() {
+				var totalAmount = 0;
+
+				// Loop through all selected checkboxes
+				$('.form-check-input:checked').each(function() {
+					// Get the amount from the membership label selected
+					var amount = $(this).closest('.form-group').find('.form-control span:last').text().replace('₱', '').trim();
+					totalAmount += parseFloat(amount);
+				});
+
+				// Update the total amount input field
+				$('#total_amount').val('₱' + totalAmount.toFixed(2));
+			});
+		});
+	</script>
+
+	<!-- handle the payment -->
+	<script>
+		$(document).ready(function() {
+			$('.form-check-input').change(function() {
+				var totalAmount = 0;
+
+				// Loop through all selected checkboxes
+				$('.form-check-input:checked').each(function() {
+					// Get the amount from the membership label selected
+					var amount = $(this).closest('.form-group').find('.form-control span:last').text().replace('₱', '').trim();
+					totalAmount += parseFloat(amount);
+				});
+
+				// Update the total amount input field
+				$('#total_amount').val('₱' + totalAmount.toFixed(2));
+			});
+
+			// Handle form submission
+			$('form').on('submit', function(event) {
+				// Get the total amount from the readonly input and parse it correctly
+				var totalAmount = parseFloat($('#total_amount').val().replace('₱', '').trim());
+				// Get the amount paid from the input field
+				var amountPaid = parseFloat($('#amount_paid').val());
+
+				// Check if any membership is selected
+				var isMembershipSelected = $('.form-check-input:checked').length > 0;
+
+				// If no membership is selected, show SweetAlert to select a membership
+				if (!isMembershipSelected) {
+					event.preventDefault(); // Prevent form submission
+					Swal.fire({
+						icon: 'warning',
+						title: 'Selection Error',
+						text: 'Please select at least one membership plan!',
+						timer: 3000,
+						timerProgressBar: true
+					});
+					return; // Exit function and prevent form submission
+				}
+
+				// Check if the amount paid is entered and is a valid number
+				if (isNaN(amountPaid) || amountPaid <= 0) {
+					event.preventDefault(); // Prevent form submission
+					Swal.fire({
+						icon: 'error',
+						title: 'Amount Error',
+						text: 'Please enter a valid amount paid!',
+						timer: 3000,
+						timerProgressBar: true
+					});
+					return; // Exit function and prevent form submission
+				}
+
+				// Check if the amount paid is less than total amount
+				if (amountPaid < totalAmount) {
+					// Prevent form submission
+					event.preventDefault();
+					// Show SweetAlert if amount is not enough
+					Swal.fire({
+						icon: 'error',
+						title: 'Payment Error',
+						text: 'The amount paid is not enough! Please enter a valid amount.',
+						timer: 3000,
+						timerProgressBar: true
+					});
+				} else {
+					event.preventDefault();
+					$('form')[0].submit();
+				}
+			});
+		});
 	</script>
 </body>
 

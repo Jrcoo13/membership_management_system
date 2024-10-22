@@ -61,7 +61,6 @@
 									?>
 								</div>
 							</div>
-							<h3 class="page-title mt-3">LSC Membership Fee Management System</h3>
 						</div>
 					</div>
 				</div>
@@ -70,7 +69,9 @@
 						<img class="img-fluid bg-light rounded-circle" src="<?= base_url('assets/img/logo.png') ?>" alt="Logo">
 					</div>
 					<div class="login-right">
-						<div class="login-right-wrap">
+						<div class="login-right-wrap text-center">
+							<img style="height: 100px; width: 100px;" class="mb-3" src="<?= base_url('assets/img/logo.png') ?>" alt="">
+							<h5 class="mb-4">LCS Membership Fee Management System</h5>
 							<h1 class="mb-4">Login</h1>
 							<form action="<?= base_url('/login') ?>" method="POST" class="row needs-validation" novalidate>
 								<div class="form-group">

@@ -31,7 +31,12 @@
                     <ul>
                         <li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                         <li class="list-divider"></li>
-                        <li class="active"> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+                        <li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" style="display: none;">
+								<li><a href="<?= base_url('admin/students') ?>"> All Student </a></li>
+								<li><a href="<?= base_url('admin/add_student') ?>"> Add Student </a></li>
+							</ul>
+						</li>
                         <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
                         <li class="list-divider"></li>
                         <li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
@@ -76,7 +81,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="course">Degree Program</label>
-                                        <select class="form-control" id="course" name="course" required>
+                                        <select class="form-select" id="course" name="course" required>
                                             <option <?php if ($student['degree_program'] == "Bachelor of Science in Information Technology") echo "selected"; ?>>
                                                 Bachelor of Science in Information Technology
                                             </option>
@@ -96,14 +101,35 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="year_level">Year Level</label>
-                                        <input class="form-control" type="tel" name="year_level" id="year_level" value="<?= $student['year_level'] ?>" required>
-                                        <div class="invalid-feedback">
-											Please enter your year level.
-										</div>
-                                    </div>
-                                </div>
+									<div class="form-group">
+										<label for="year_level">Year Level</label>
+										<select class="form-select" name="year_level" id="year_level" required>
+											<option <?php if($student['year_level'] == '1') echo 'selected'?>>1</option>
+											<option <?php if($student['year_level'] == '2') echo 'selected'?>>2</option>
+                                            <option <?php if($student['year_level'] == '3') echo 'selected'?>>3</option>
+											<option <?php if($student['year_level'] == '4') echo 'selected'?>>4</option>
+										</select>
+									</div>
+								</div>
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label for="section">Section</label>
+										<select class="form-select" name="section" id="section" required>
+											<option <?php if($student['section'] == 'A') echo 'selected'?>>A</option>
+											<option <?php if($student['section'] == 'B') echo 'selected'?>>B</option>
+                                            <option <?php if($student['section'] == 'C') echo 'selected'?>>C</option>
+										</select>
+									</div>
+								</div>
+                                <div class="col-md-4">
+									<div class="form-group">
+										<label for="semester">Semester</label>
+										<select class="form-select" name="semester" id="semester" required>
+											<option <?php if($student['semester'] == '1') echo 'selected'?>>1</option>
+											<option <?php if($student['semester'] == '2') echo 'selected'?>>2</option>
+										</select>
+									</div>
+								</div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="email">Email</label>

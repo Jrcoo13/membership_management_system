@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Payment History</title>
+    <title>Transaction History</title>
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/logo.png') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/feathericon.min.css') ?>">
@@ -36,7 +36,12 @@
                     <ul>
                         <li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                         <li class="list-divider"></li>
-                        <li> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+                        <li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
+							<ul class="submenu_class" style="display: none;">
+								<li><a href="<?= base_url('admin/students') ?>"> All Student </a></li>
+								<li><a href="<?= base_url('admin/add_student') ?>"> Add Student </a></li>
+							</ul>
+						</li>
                         <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
                         <li class="list-divider"></li>
                         <li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
@@ -95,12 +100,13 @@
                                         </form>
                                     </div>
                                 </div>
-                                <h4 class="page-title float-left">Payment History</h4>
+                                <h4 class="page-title float-left">Transaction History</h4>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                <div class="export-buttons"></div>
                     <div class="col-md-12 d-flex">
                         <div class="card card-table flex-fill">
                             <div class="card-body">

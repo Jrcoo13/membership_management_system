@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Students</title>
+    <title>All Students</title>
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/logo.png') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/feathericon.min.css') ?>">
@@ -38,11 +38,16 @@
                     <ul>
                         <li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                         <li class="list-divider"></li>
-                        <li class="active"> <a href="<?= base_url('admin/students') ?>"><i class="fa-solid fa-user-group"></i> <span> Students </span></a></li>
+                        <li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
+                            <ul class="submenu_class" style="display: none;">
+                                <li><a class="active" href="<?= base_url('admin/students') ?>"> All Student </a></li>
+                                <li><a href="<?= base_url('admin/add_student') ?>"> Add Student </a></li>
+                            </ul>
+                        </li>
                         <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
                         <li class="list-divider"></li>
                         <li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
-						<li> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
+                        <li> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
                     </ul>
                 </div>
             </div>
@@ -70,17 +75,16 @@
                                         });
                                     </script>
                                 <?php endif; ?>
-                                <h4 class="page-title float-left">All Students</h4><a href="<?= base_url('admin/add_student') ?>" class="btn btn-primary btn-md float-right">Add Student</a>
+                                <h4 class="page-title float-left">All Students</h4>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="export-buttons"></div>
                     <div class="col-md-12 d-flex">
                         <div class="card card-table flex-fill">
                             <div class="card-body">
-                                <!-- <div class="export-buttons">
-                                </div> -->
                                 <div class="table-responsive">
                                     <table class="table table-hover table-center" id="table">
                                         <thead>
@@ -101,10 +105,10 @@
                                                     <tr>
                                                         <td><?= $row['student_id'] ?></td>
                                                         <td><?= $row['student_name'] ?></td>
-                                                        <td><?= $row['degree_program'] . ' '. $row['year_level'] ?></td>
+                                                        <td><?= $row['degree_program'] . ' ' . $row['year_level'].$row['section'] ?></td>
                                                         <td class="text-center">
                                                             <a href="<?= base_url('/admin/edit_student/' . $row['id']); ?>" class="btn btn-light btn-sm border-0 text-primary bg-primary-light"><i class="fa-regular fa-pen-to-square"></i></a>
-                                                            <button class="btn btn-light btn-sm border-0 text-dark"><i class="fa-regular fa-eye"></i></button>
+                                                            <a href="<?= base_url('/admin/view_student/' . $row['id']); ?>" class="btn btn-light btn-sm border-0 text-dark"><i class="fa-regular fa-eye"></i></a>
                                                             <button class="btn btn-light btn-sm border-0 text-danger bg-danger-light" onclick="confirmDelete(<?= $row['id'] ?>)">
                                                                 <i class="fa-regular fa-trash-can"></i>
                                                             </button>
@@ -150,7 +154,7 @@
     <script>
         $(document).ready(function() {
             var table = $('#table').DataTable({
-                dom: 'Bfrtip', 
+                dom: 'Bfrtip',
                 // buttons: [
                 //     // 'copy', 
                 //     // 'csv', 
@@ -194,7 +198,7 @@
         });
     </script>
 
-<script>
+    <script>
         function confirmDelete(userId) {
             const csrfToken = '<?= csrf_hash() ?>'; // Get CSRF token
             const csrfName = '<?= csrf_token() ?>'; // Get CSRF token name

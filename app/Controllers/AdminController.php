@@ -122,7 +122,7 @@ class AdminController extends BaseController
         session()->set('user', $updatedAdmin);
 
         // Redirect back to the profile page with a success message
-        return redirect()->to('/admin/admin_profile')->with('status', 'Successfully updated');
+        return redirect()->to('/admin/admin_profile')->with('success', 'Successfully updated');
     }
 
     //list of student page view
@@ -147,24 +147,169 @@ class AdminController extends BaseController
     //add student ui view
     public function addStudentView()
     {
-        return view('/admin/add_student');
+        $membership = new MembershipModel();
+        $data['memberships'] = $membership->findAll();
+        return view('/admin/add_student', $data);
     }
 
     //add student to db
     public function addStudent()
     {
+        // Add this line at the top of your controller to load the MembershipModel
+        $membershipModel = new MembershipModel();
+
         $student = new StudentsModel();
+
+        // Get the selected membership IDs (this will be an array)
+        $selectedMemberships = $this->request->getPost('membership_name');
+
+        // Convert the array to a comma-separated string
+        if ($selectedMemberships) {
+            $membershipIds = implode(',', $selectedMemberships);  // "35,36,37"
+        } else {
+            $membershipIds = null;  // In case no memberships are selected
+        }
+        $student_id = $this->request->getPost('student_id');
+        $student_name = $this->request->getPost('first_name') . ' ' . $this->request->getPost('last_name');
+        $degree_program = $this->request->getPost('course');
+        $year_level = $this->request->getPost('year_level');
+        $section = $this->request->getPost('section');
+        $semester = $this->request->getPost('semester');
+        $email = $this->request->getPost('email');
+        $mobile_number = $this->request->getPost('mobile_number');
+        $amount_paid = $this->request->getPost('amount_paid');
+
+        // Prepare data to be saved
         $data = [
-            'student_id' => $this->request->getPost('student_id'),
-            'student_name' => $this->request->getPost('first_name') . ' ' . $this->request->getPost('last_name'),
-            'degree_program' => $this->request->getPost('course'),
-            'year_level' => $this->request->getPost('year_level'),
-            'email' => $this->request->getPost('email'),
-            'mobile_number' => $this->request->getPost('mobile_number'),
-            'status' => 'Processing'
+            'student_id' => $student_id,
+            'student_name' => $student_name,
+            'degree_program' => $degree_program,
+            'year_level' => $year_level,
+            'section' => $section,
+            'semester' => $semester,
+            'email' => $email,
+            'mobile_number' => $mobile_number,
+            'membership_paid' => $membershipIds,
+            'amount_paid' => $amount_paid,
+            'status' => 'Approved'
         ];
-        $student->save($data);
-        return redirect()->to('/admin/students')->with('status', 'Student has been added.');
+
+        // Save the data to the database
+        if ($student->save($data)) {
+            //sends mail
+            // $subject = 'Cotsu LSC Membership';
+            // $message = 'Hello World';
+
+            // $sendEmail = service('email');
+            // $sendEmail->setTo($email);
+            // $sendEmail->setFrom('cotsulscmembership@gmail.com','Cotsu');
+            // $sendEmail->setSubject($subject);
+            // $sendEmail->setMessage($message);
+            // $sendEmail->send();
+            // return redirect()->to('/admin/add_student')->with('success', 'Student has been added.');
+            // Send email after successful student registration
+            $subject = 'Cotsu LSC Membership - Registration Confirmation';
+
+            // Build the email message (HTML format for better readability)
+            $message = "
+    <html>
+    <head>
+        <title>$subject</title>
+        <style>
+            body { font-family: Arial, sans-serif; }
+            h3 { color: #0056b3; }
+            p { font-size: 16px; line-height: 1.6; }
+            ul { font-size: 16px; }
+            li { margin: 8px 0; }
+            .membership-list { margin-top: 10px; }
+            .membership-list li { color: #555555; }
+        </style>
+    </head>
+    <body>
+        <h3>Hello $student_name,</h3>
+        <p>Thank you for registering with the Cotsu LSC Membership!</p>
+        
+        <p><strong>Here are the details of your registration:</strong></p>
+        <ul>
+            <li><strong>Student ID:</strong> $student_id</li>
+            <li><strong>Degree Program:</strong> $degree_program</li>
+            <li><strong>Year Level:</strong> $year_level</li>
+            <li><strong>Section:</strong> $section</li>
+            <li><strong>Semester:</strong> $semester</li>
+            <li><strong>Amount Paid:</strong> &#8369;$amount_paid</li>
+        </ul>
+
+        <p><strong>Your Memberships:</strong></p>
+        <ul class='membership-list'>
+";
+
+            // Include selected memberships in the email
+            if ($selectedMemberships) {
+                foreach ($selectedMemberships as $membershipId) {
+                    // Fetch the membership details using the MembershipModel
+                    $membership = $membershipModel->find($membershipId);  // Ensure you're fetching data correctly
+
+                    if ($membership) {
+                        $message .= "<li>{$membership['membership_name']} - &#8369;{$membership['amount']}</li>";
+                    }
+                }
+            }
+
+            $message .= "
+        </ul>
+
+        <p>If you have any questions or need assistance, feel free to contact us at <strong>cotsulscmembership@gmail.com</strong>.</p>
+        <br>
+        <p>Best regards,<br>The Cotsu LSC</p>
+    </body>
+    </html>
+";
+
+            // Email setup
+            $emailService = \Config\Services::email();
+
+            // Set the recipient, sender, subject, and message
+            $emailService->setTo($email);
+            $emailService->setFrom('cotsulscmembership@gmail.com', 'Cotsu LSC');
+            $emailService->setSubject($subject);
+            $emailService->setMessage($message);
+
+            // Send the email and check if it was successful
+            if ($emailService->send()) {
+                // Successfully sent email
+                return redirect()->to('/admin/add_student')->with('success', 'Student has been added and confirmation email sent.');
+            } else {
+                // Log the error message and show a user-friendly message
+                // log_message('error', 'Failed to send confirmation email to ' . $email . '. Error: ' . implode(', ', $emailService->printDebugger()));
+                return redirect()->to('/admin/add_student')->with('error', 'Student has been added, but there was an error sending the confirmation email.');
+            }
+        } else {
+            return redirect()->to('/admin/add_student')->with('error', 'There was an error adding the student.');
+        }
+    }
+
+
+    public function viewStudent($id)
+    {
+        // Load the models
+        $studentModel = new StudentsModel();
+        $membershipModel = new MembershipModel();
+
+        // Fetch student data by ID
+        $student = $studentModel->find($id);
+
+        // Fetch all memberships
+        $memberships = $membershipModel->findAll();
+
+        // Pass student and membership data to the view
+        $data['student'] = $student;
+        $data['memberships'] = $memberships;
+
+        // Ensure membership IDs are passed as an array for the selected memberships
+        $selectedMembershipIds = explode(',', $student['membership_paid']);
+        $data['selectedMembershipIds'] = $selectedMembershipIds;
+
+        return view('/admin/view_student', $data);
     }
 
     //edit student ui view
@@ -172,7 +317,7 @@ class AdminController extends BaseController
     {
         $student = new StudentsModel();
         $data['student'] = $student->find($id);
-        return view('admin/edit_student', $data);
+        return view('/admin/edit_student', $data);
     }
 
     //update student data
@@ -185,6 +330,8 @@ class AdminController extends BaseController
             'student_name' => $this->request->getPost('full_name'),
             'degree_program' => $this->request->getPost('course'),
             'year_level' => $this->request->getPost('year_level'),
+            'section' => $this->request->getPost('section'),
+            'semester' => $this->request->getPost('semester'),
             'email' => $this->request->getPost('email'),
             'mobile_number' => $this->request->getPost('mobile_number'),
         ];

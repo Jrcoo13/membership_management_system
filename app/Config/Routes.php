@@ -36,6 +36,8 @@ $routes->get('/admin/add_student', 'AdminController::addStudentView');
 //add student to db
 $routes->post('/add_student_db', 'AdminController::addStudent');
 
+//view student route
+$routes->get('/admin/view_student/(:num)','AdminController::viewStudent/$1');
 //edit student view route
 $routes->get('/admin/edit_student/(:num)', 'AdminController::editStudentView/$1');
 
@@ -74,10 +76,3 @@ $routes->post('approve_request/(:num)', 'AdminController::approveMembershipReque
 
 //rejected post  | for updating the user status 
 $routes->post('reject_request/(:num)', 'AdminController::rejectMembershipRequest/$1');
-
-//----- LSC Membership Form ROUTES -----
-$routes->get('/lsc_membership_form', 'LSCFormController::index');
-
-//submit membership form
-$routes->post('/submit_form', 'LSCFormController::submitForm');
-

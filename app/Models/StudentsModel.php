@@ -17,10 +17,12 @@ class StudentsModel extends Model
         'student_name',
         'degree_program',
         'year_level',
+        'section',
+        'semester',
         'email',
         'mobile_number',
-        'membership_paid',
         'amount_paid',
+        'membership_paid',
         'transaction_date',
         'status'
     ];
