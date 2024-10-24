@@ -38,7 +38,6 @@
 						</li>
 						<li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
 						<li class="list-divider"></li>
-						<li> <a href="<?= base_url('/admin/pending_payment') ?>"><i class="fa-solid fa-user-clock"></i> <span> Pending Payment </span></a></li>
 						<li> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
 					</ul>
 				</div>
@@ -54,27 +53,27 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xl-3 col-sm-6 col-12">
+					<div class="col-xl-4 col-sm-6 col-12">
 						<div class="card fill rounded-sm">
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header text-dark fw-bold"><?= esc($total_students); ?></h3>
+										<h3 class="card_widget_header text-dark fw-bold" aria-label="Total Active Students"><?= esc(number_format($total_students)); ?></h3>
 										<h6>Active Students</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
-										<i class="fas fa-user fa-2x text-secondary"></i>
+										<i class="fas fa-user fa-2x text-secondary" aria-hidden="true"></i>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-3 col-sm-6 col-12">
+					<div class="col-xl-4 col-sm-6 col-12">
 						<div class="card fill rounded-sm">
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header text-dark fw-bold"><?= esc($total_students); ?></h3>
+										<h3 class="card_widget_header text-dark fw-bold"><?= esc(number_format($todays_payments)) ?? 0; ?></h3>
 										<h6>Recent Payments</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
@@ -84,37 +83,18 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-3 col-sm-6 col-12">
+					<div class="col-xl-4 col-sm-6 col-12">
 						<div class="card fill rounded-sm">
 							<div class="card-body">
 								<div class="dash-widget-header">
 									<div>
-										<h3 class="card_widget_header text-dark fw-bold">
-											<?php if ($monthly_revenue > 0): ?>
-												<?= '₱' . number_format($monthly_revenue, 2); ?>
-											<?php else: ?>
-												₱0.00
-											<?php endif; ?>
+										<h3 class="card_widget_header text-dark fw-bold" aria-label="Monthly Revenue">
+											<?= '₱' . number_format(max($monthly_revenue, 0), 2); ?>
 										</h3>
 										<h6>Monthly Revenue</h6>
 									</div>
 									<div class="ml-auto mt-md-3 mt-lg-0">
-										<i class="fas fa-calendar-alt fa-2x text-secondary"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12">
-						<div class="card fill rounded-sm">
-							<div class="card-body">
-								<div class="dash-widget-header">
-									<div>
-										<h3 class="card_widget_header text-dark fw-bold"><?= esc($total_students); ?></h3>
-										<h6>Pending Payments</h6>
-									</div>
-									<div class="ml-auto mt-md-3 mt-lg-0">
-										<i class="fa-solid fa-user-clock fa-2x text-secondary"></i>
+										<i class="fas fa-calendar-alt fa-2x text-secondary" aria-hidden="true"></i>
 									</div>
 								</div>
 							</div>
@@ -148,7 +128,7 @@
 												<tr>
 													<td><?= $row['student_id'] ?></td>
 													<td><?= $row['student_name'] ?></td>
-													<td><?= $row['degree_program']. ' ' .$row['year_level'].$row['section']?></td>
+													<td><?= $row['degree_program'] . ' ' . $row['year_level'] ?></td>
 													<td><?= $row['transaction_date'] ?></td>
 												</tr>
 											<?php endforeach; ?>

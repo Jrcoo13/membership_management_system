@@ -68,11 +68,11 @@ $routes->delete('/admin/delete_membership/(:num)', 'AdminController::deleteMembe
 //payment history view page route
 $routes->get('/admin/payment_history', 'AdminController::paymentHistoryView');
 
-//pending payment view route
-$routes->get('admin/pending_payment', 'AdminController::pendingPaymentView');
+// //pending payment view route
+// $routes->get('admin/pending_payment', 'AdminController::pendingPaymentView');
 
-//approved post  | for updating the user status 
-$routes->post('approve_request/(:num)', 'AdminController::approveMembershipRequest/$1');
+// //approved post  | for updating the user status 
+// $routes->post('approve_request/(:num)', 'AdminController::approveMembershipRequest/$1');
 
-//rejected post  | for updating the user status 
-$routes->post('reject_request/(:num)', 'AdminController::rejectMembershipRequest/$1');
+// //rejected post  | for updating the user status 
+// $routes->post('reject_request/(:num)', 'AdminController::rejectMembershipRequest/$1');

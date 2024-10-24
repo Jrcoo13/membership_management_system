@@ -29,6 +29,15 @@ class AdminController extends BaseController
             ->where('status', 'Approved')
             ->countAllResults();
 
+        // Get today's date
+        $today = date('Y-m-d'); // Format: YYYY-MM-DD
+
+        // Count the number of students who paid today
+        $data['todays_payments'] = $student
+            ->where('status', 'Approved')
+            ->where('DATE(transaction_date)', $today) // Filter by today's date
+            ->countAllResults();
+
         // Get the latest 5 students, ordered by join date
         $data['student'] = $student->orderBy('transaction_date', 'DESC')
             ->where('status', 'Approved') //only return the data that has a 'Approved' status value
@@ -155,66 +164,57 @@ class AdminController extends BaseController
     //add student to db
     public function addStudent()
     {
-        // Add this line at the top of your controller to load the MembershipModel
         $membershipModel = new MembershipModel();
+        $studentModel = new StudentsModel();
 
-        $student = new StudentsModel();
-
-        // Get the selected membership IDs (this will be an array)
-        $selectedMemberships = $this->request->getPost('membership_name');
-
-        // Convert the array to a comma-separated string
-        if ($selectedMemberships) {
-            $membershipIds = implode(',', $selectedMemberships);  // "35,36,37"
-        } else {
-            $membershipIds = null;  // In case no memberships are selected
-        }
-        $student_id = $this->request->getPost('student_id');
-        $student_name = $this->request->getPost('first_name') . ' ' . $this->request->getPost('last_name');
-        $degree_program = $this->request->getPost('course');
-        $year_level = $this->request->getPost('year_level');
-        $section = $this->request->getPost('section');
-        $semester = $this->request->getPost('semester');
-        $email = $this->request->getPost('email');
-        $mobile_number = $this->request->getPost('mobile_number');
-        $amount_paid = $this->request->getPost('amount_paid');
-
-        // Prepare data to be saved
-        $data = [
-            'student_id' => $student_id,
-            'student_name' => $student_name,
-            'degree_program' => $degree_program,
-            'year_level' => $year_level,
-            'section' => $section,
-            'semester' => $semester,
-            'email' => $email,
-            'mobile_number' => $mobile_number,
-            'membership_paid' => $membershipIds,
-            'amount_paid' => $amount_paid,
+        // Retrieve POST data
+        $selectedMemberships = $this->request->getPost('membership_name') ?: [];
+        $studentData = [
+            'student_id' => $this->request->getPost('student_id'),
+            'student_name' => $this->request->getPost('first_name') . ' ' . $this->request->getPost('last_name'),
+            'degree_program' => $this->request->getPost('course'),
+            'year_level' => $this->request->getPost('year_level'),
+            'section' => $this->request->getPost('section'),
+            'semester' => $this->request->getPost('semester'),
+            'email' => $this->request->getPost('email'),
+            'mobile_number' => $this->request->getPost('mobile_number'),
+            'amount_paid' => $this->request->getPost('amount_paid'),
+            'membership_paid' => $selectedMemberships ? implode(',', $selectedMemberships) : null,
             'status' => 'Approved'
         ];
 
-        // Save the data to the database
-        if ($student->save($data)) {
-            //sends mail
-            // $subject = 'Cotsu LSC Membership';
-            // $message = 'Hello World';
-
-            // $sendEmail = service('email');
-            // $sendEmail->setTo($email);
-            // $sendEmail->setFrom('cotsulscmembership@gmail.com','Cotsu');
-            // $sendEmail->setSubject($subject);
-            // $sendEmail->setMessage($message);
-            // $sendEmail->send();
-            // return redirect()->to('/admin/add_student')->with('success', 'Student has been added.');
-            // Send email after successful student registration
+        // Save the student data
+        if ($studentModel->save($studentData)) {
+            // Prepare email content
             $subject = 'Cotsu LSC Membership - Registration Confirmation';
+            $message = $this->generateEmailMessage($studentData, $selectedMemberships, $membershipModel);
 
-            // Build the email message (HTML format for better readability)
-            $message = "
+            // Send email
+            $emailService = \Config\Services::email();
+            $emailService->setTo($studentData['email']);
+            $emailService->setFrom('cotsulscmembership@gmail.com', 'Cotsu LSC');
+            $emailService->setSubject($subject);
+            $emailService->setMessage($message);
+
+            // Check if the email was sent successfully
+            if ($emailService->send()) {
+                return redirect()->to('/admin/add_student')->with('success', 'Student has been added.');
+            } else {
+                // log_message('error', 'Failed to send confirmation email to ' . $studentData['email'] . '. Error: ' . implode(', ', $emailService->printDebugger()));
+                return redirect()->to('/admin/add_student')->with('error', 'Student has been added, but there was an error sending the confirmation email.');
+            }
+        }
+
+        return redirect()->to('/admin/add_student')->with('error', 'There was an error adding the student.');
+    }
+
+    private function generateEmailMessage($studentData, $selectedMemberships, $membershipModel)
+    {
+        $st = 'st';
+        $message = "
     <html>
     <head>
-        <title>$subject</title>
+        <title>Cotsu LSC Membership - Registration Confirmation</title>
         <style>
             body { font-family: Arial, sans-serif; }
             h3 { color: #0056b3; }
@@ -226,66 +226,38 @@ class AdminController extends BaseController
         </style>
     </head>
     <body>
-        <h3>Hello $student_name,</h3>
+        <h3>Hello {$studentData['student_name']},</h3>
         <p>Thank you for registering with the Cotsu LSC Membership!</p>
         
         <p><strong>Here are the details of your registration:</strong></p>
         <ul>
-            <li><strong>Student ID:</strong> $student_id</li>
-            <li><strong>Degree Program:</strong> $degree_program</li>
-            <li><strong>Year Level:</strong> $year_level</li>
-            <li><strong>Section:</strong> $section</li>
-            <li><strong>Semester:</strong> $semester</li>
-            <li><strong>Amount Paid:</strong> &#8369;$amount_paid</li>
+            <li><strong>Student ID:</strong> {$studentData['student_id']}</li>
+            <li><strong>Degree Program:</strong> {$studentData['degree_program']}</li>
+            <li><strong>Year Level:</strong> {$studentData['year_level']}</li>
+            <li><strong>Section:</strong> {$studentData['section']}</li>
+            <li><strong>Semester:</strong> {$studentData['semester']}{$st}</li>
+            <li><strong>Amount Paid:</strong> &#8369;{$studentData['amount_paid']}</li>
         </ul>
 
         <p><strong>Your Memberships:</strong></p>
         <ul class='membership-list'>
 ";
 
-            // Include selected memberships in the email
-            if ($selectedMemberships) {
-                foreach ($selectedMemberships as $membershipId) {
-                    // Fetch the membership details using the MembershipModel
-                    $membership = $membershipModel->find($membershipId);  // Ensure you're fetching data correctly
-
-                    if ($membership) {
-                        $message .= "<li>{$membership['membership_name']} - &#8369;{$membership['amount']}</li>";
-                    }
-                }
+        if ($selectedMemberships) {
+            $memberships = $membershipModel->whereIn('id', $selectedMemberships)->findAll();
+            foreach ($memberships as $membership) {
+                $message .= "<li>{$membership['membership_name']} - &#8369;{$membership['amount']}</li>";
             }
-
-            $message .= "
-        </ul>
-
-        <p>If you have any questions or need assistance, feel free to contact us at <strong>cotsulscmembership@gmail.com</strong>.</p>
-        <br>
-        <p>Best regards,<br>The Cotsu LSC</p>
-    </body>
-    </html>
-";
-
-            // Email setup
-            $emailService = \Config\Services::email();
-
-            // Set the recipient, sender, subject, and message
-            $emailService->setTo($email);
-            $emailService->setFrom('cotsulscmembership@gmail.com', 'Cotsu LSC');
-            $emailService->setSubject($subject);
-            $emailService->setMessage($message);
-
-            // Send the email and check if it was successful
-            if ($emailService->send()) {
-                // Successfully sent email
-                return redirect()->to('/admin/add_student')->with('success', 'Student has been added and confirmation email sent.');
-            } else {
-                // Log the error message and show a user-friendly message
-                // log_message('error', 'Failed to send confirmation email to ' . $email . '. Error: ' . implode(', ', $emailService->printDebugger()));
-                return redirect()->to('/admin/add_student')->with('error', 'Student has been added, but there was an error sending the confirmation email.');
-            }
-        } else {
-            return redirect()->to('/admin/add_student')->with('error', 'There was an error adding the student.');
         }
+        $message .= "
+</ul>
+<p>If you have any questions or need assistance, feel free to contact us at <strong>cotsulscmembership@gmail.com</strong>.</p>
+<br>
+<p>Best regards,<br>The Cotsu LSC</p>
+</body>
+</html>";
+
+        return $message;
     }
 
 
@@ -430,42 +402,43 @@ class AdminController extends BaseController
         return view('/admin/payment_history', $data);
     }
 
-    //pending payments view
-    public function pendingPaymentView()
-    {
-        $past_transaction = new StudentsModel();
-        $data['pending_payment'] = $past_transaction
-            ->where('status', 'Processing') //get data that has a processing data on the status field
-            //->where('amount_paid', '0') //it also checks if the user is already paid
-            ->findAll();
-        return view('/admin/pending_payment', $data);
-    }
+    //     //pending payments view
+    //     public function pendingPaymentView()
+    //     {
+    //         $past_transaction = new StudentsModel();
+    //         $data['pending_payment'] = $past_transaction
+    //             ->where('status', 'Processing') //get data that has a processing data on the status field
+    //             //->where('amount_paid', '0') //it also checks if the user is already paid
+    //             ->findAll();
+    //         return view('/admin/pending_payment', $data);
+    //     }
 
-    //approved membership payment
-    public function approveMembershipRequest($id)
-    {
-        $user_status = new StudentsModel();
-        //change the status to 'Approved'
-        $data = [
-            'status' => 'Approved',
-        ];
-        //update the user status
-        $user_status->update($id, $data);
+    //     //approved membership payment
+    //     public function approveMembershipRequest($id)
+    //     {
+    //         $user_status = new StudentsModel();
+    //         //change the status to 'Approved'
+    //         $data = [
+    //             'status' => 'Approved',
+    //         ];
+    //         //update the user status
+    //         $user_status->update($id, $data);
 
-        return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been approved.');
-    }
+    //         return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been approved.');
+    //     }
 
-    //reject membership payment
-    public function rejectMembershipRequest($id)
-    {
-        $user_status = new StudentsModel();
-        //change the status to 'Approved'
-        $data = [
-            'status' => 'Rejected',
-        ];
-        //update the user status
-        $user_status->update($id, $data);
+    //     //reject membership payment
+    //     public function rejectMembershipRequest($id)
+    //     {
+    //         $user_status = new StudentsModel();
+    //         //change the status to 'Approved'
+    //         $data = [
+    //             'status' => 'Rejected',
+    //         ];
+    //         //update the user status
+    //         $user_status->update($id, $data);
 
-        return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been rejected.');
-    }
+    //         return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been rejected.');
+    //     }
+    // }
 }
