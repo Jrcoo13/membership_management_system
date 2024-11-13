@@ -1,0 +1,171 @@
+INFO - 2024-11-12 06:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-12 06:20:41 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL: Handshake timed out in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php:1896
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', '/Applications/X...', 1896)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1896): fsockopen('ssl://smtp.goog...', 465, NULL, NULL, 1)
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1809): CodeIgniter\Email\Email->SMTPConnect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1694): CodeIgniter\Email\Email->sendWithSmtp()
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php(198): CodeIgniter\Email\Email->send()
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\AdminController->addStudent()
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#13 {main}
+ERROR - 2024-11-12 06:20:41 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-12 06:20:41 --> 
+INFO - 2024-11-12 06:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-12 06:23:11 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): Unable to connect to ssl://smtp.googlemail.com:465 (Operation timed out) in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php:1896
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): Un...', '/Applications/X...', 1896)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1896): fsockopen('ssl://smtp.goog...', 465, NULL, NULL, 1)
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1809): CodeIgniter\Email\Email->SMTPConnect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1694): CodeIgniter\Email\Email->sendWithSmtp()
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php(198): CodeIgniter\Email\Email->send()
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\AdminController->addStudent()
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#13 {main}
+ERROR - 2024-11-12 06:23:11 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-12 06:23:11 --> 
+INFO - 2024-11-12 06:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-12 06:30:55 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: admin/students]
+in APPPATH/Views/admin/includes/header.php on line 10.
+ 1 APPPATH/Views/admin/includes/header.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php', 10)
+ 2 APPPATH/Views/admin/students.php(33): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php')
+ 3 SYSTEMPATH/View/View.php(234): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/students.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/students', [], true)
+ 6 APPPATH/Controllers/AdminController.php(142): view('/admin/students', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->students()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-11-12 06:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-12 06:30:56 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: admin/students]
+in APPPATH/Views/admin/includes/header.php on line 10.
+ 1 APPPATH/Views/admin/includes/header.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php', 10)
+ 2 APPPATH/Views/admin/students.php(33): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php')
+ 3 SYSTEMPATH/View/View.php(234): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/students.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/students', [], true)
+ 6 APPPATH/Controllers/AdminController.php(142): view('/admin/students', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->students()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-11-12 06:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-12 06:30:57 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: admin/students]
+in APPPATH/Views/admin/includes/header.php on line 10.
+ 1 APPPATH/Views/admin/includes/header.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php', 10)
+ 2 APPPATH/Views/admin/students.php(33): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php')
+ 3 SYSTEMPATH/View/View.php(234): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/students.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/students', [], true)
+ 6 APPPATH/Controllers/AdminController.php(142): view('/admin/students', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->students()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-11-12 06:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-12 06:30:57 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: admin/students]
+in APPPATH/Views/admin/includes/header.php on line 10.
+ 1 APPPATH/Views/admin/includes/header.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php', 10)
+ 2 APPPATH/Views/admin/students.php(33): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/includes/header.php')
+ 3 SYSTEMPATH/View/View.php(234): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/students.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/students', [], true)
+ 6 APPPATH/Controllers/AdminController.php(142): view('/admin/students', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->students()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-11-12 06:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-12 06:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

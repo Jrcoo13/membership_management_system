@@ -29,7 +29,8 @@
 		.form-check-input:checked+.form-control {
 			border-color: #007bff;
 			/* Bootstrap primary color */
-			background-color: #e9f5ff;
+			background-color: #6c757d;
+			color: #fff;
 			/* Light blue for the selected state */
 		}
 
@@ -146,9 +147,10 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="student_id">ID Number</label>
-										<input class="form-control" type="number" name="student_id" id="student_id" required>
+										<input type="text" class="form-control" name="student_id" id="student_id" maxlength="7" pattern="\d{7}" required
+											oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 										<div class="invalid-feedback">
-											Please enter your student id.
+											Please enter your student ID.
 										</div>
 									</div>
 								</div>
@@ -206,7 +208,8 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label for="mobile_number">Phone Number</label>
-										<input type="number" class="form-control" name="mobile_number" id="mobile_number" required>
+										<input type="text" class="form-control" name="mobile_number" id="mobile_number" maxlength="11" pattern="\d{11}" required
+											oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 										<div class="invalid-feedback">
 											Please provide a valid mobile number.
 										</div>
@@ -226,7 +229,7 @@
 													<!-- Div styled as a checkbox -->
 													<div class="form-control d-flex align-items-center p-2 border rounded cursor-pointer" onclick="document.getElementById('membership<?= $row['id'] ?>').click();">
 														<span class="me-2">
-															<i class="bi bi-circle" id="icon-membership<?= $row['id'] ?>"></i>
+															<i class="" id="icon-membership<?= $row['id'] ?>"></i>
 														</span>
 														<span><?= $row['membership_name'] . ' ' ?><span>&#8369;<?= $row['amount'] ?></span></span>
 													</div>
@@ -418,5 +421,4 @@
 		});
 	</script>
 </body>
-
 </html>

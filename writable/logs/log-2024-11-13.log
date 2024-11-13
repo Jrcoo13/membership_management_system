@@ -1,0 +1,62 @@
+ERROR - 2024-11-13 07:05:17 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-13 07:05:17 --> 
+hello: 
+The following SMTP error was encountered: 
+ERROR - 2024-11-13 07:06:06 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL: Handshake timed out in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php:1896
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', '/Applications/X...', 1896)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1896): fsockopen('ssl://smtp.goog...', 465, NULL, NULL, 1)
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1809): CodeIgniter\Email\Email->SMTPConnect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1694): CodeIgniter\Email\Email->sendWithSmtp()
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php(199): CodeIgniter\Email\Email->send()
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\AdminController->addStudent()
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#13 {main}
+ERROR - 2024-11-13 07:06:06 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-13 07:06:06 --> 
+ERROR - 2024-11-13 07:06:57 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): SSL: Handshake timed out in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php:1896
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): SS...', '/Applications/X...', 1896)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1896): fsockopen('ssl://smtp.goog...', 465, NULL, NULL, 1)
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1809): CodeIgniter\Email\Email->SMTPConnect()
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1694): CodeIgniter\Email\Email->sendWithSmtp()
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Email/Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php(199): CodeIgniter\Email\Email->send()
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\AdminController->addStudent()
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#13 {main}
+ERROR - 2024-11-13 07:06:57 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-13 07:06:57 --> 
+ERROR - 2024-11-13 13:09:04 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-11-13 13:09:04 --> 220 smtp.googlemail.com ESMTP 98e67ed59e1d1-2e9f3fb65d6sm1526955a91.52 - gsmtp
+
+hello: 250-smtp.googlemail.com at your service, [2001:4456:cb8:f600:f4c2:cabb:77fb:a419]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+from: 250 2.1.0 OK 98e67ed59e1d1-2e9f3fb65d6sm1526955a91.52 - gsmtp
+
+to: 250 2.1.5 OK 98e67ed59e1d1-2e9f3fb65d6sm1526955a91.52 - gsmtp
+
+data: 354 Go ahead 98e67ed59e1d1-2e9f3fb65d6sm1526955a91.52 - gsmtp
+
+
+quit: 
+The following SMTP error was encountered: 
+The following SMTP error was encountered: 

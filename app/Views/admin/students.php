@@ -211,7 +211,7 @@
                 cancelButtonColor: '#6c757d',
                 confirmButtonColor: '#3085d6',
                 cancelButtonText: 'No',
-                confirmButtonText: 'Yes, delete',
+                confirmButtonText: 'Yes, delete ',
             }).then((result) => {
                 if (result.isConfirmed) {
                     // AJAX DELETE request
