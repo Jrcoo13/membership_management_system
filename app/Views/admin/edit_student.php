@@ -71,7 +71,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="student_id">ID Number</label>
-                                        <input class="form-control" type="tel" name="student_id" id="student_id" value="<?= $student['student_id'] ?>" required>
+                                        <input class="form-control" type="tel" name="student_id" id="student_id" value="<?= $student['student_id'] ?>" maxlength="7" pattern="\d{7}" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                         <div class="invalid-feedback">
 											Please provide a valid student id.
 										</div>
@@ -141,7 +141,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="mobile_number">Mobile Number</label>
-                                        <input type="tel" class="form-control" name="mobile_number" id="mobile_number" value="<?= $student['mobile_number'] ?>" required>
+                                        <input type="tel" class="form-control" name="mobile_number" id="mobile_number" value="<?= 0 .$student['mobile_number'] ?>" maxlength="11" pattern="\d{11}" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                         <div class="invalid-feedback">
 											Please provide a valid mobile number.
 										</div>

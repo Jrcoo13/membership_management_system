@@ -66,7 +66,6 @@
 				</div>
 				<div class="loginbox">
 					<div class="login-left bg-primary">
-						<img class="img-fluid bg-light rounded-circle" src="<?= base_url('assets/img/logo.png') ?>" alt="Logo">
 					</div>
 					<div class="login-right">
 						<div class="login-right-wrap text-center">

@@ -92,7 +92,7 @@
                                 <div class="col-auto profile-image">
                                     <a href="#"> <img class="rounded-circle" alt="User Image" src="<?= session()->get('user')['profile_picture']
                                                                                                         ? base_url('upload/' . session()->get('user')['profile_picture'])
-                                                                                                        : base_url('assets/img/default_profile.png') ?>"> </a>
+                                                                                                        : base_url('assets/img/default_profile.png') ?>" style="border: 0.1px solid #000; height: 100px; width: 100px; border-radius: 100px;"> </a>
                                 </div>
                                 <div class="col ml-md-n2 profile-user-info text-start">
                                     <h4 class="user-name mb-3"><?= session()->get('user')['first_name'] . ' ' . session()->get('user')['last_name'] ?></h4>
