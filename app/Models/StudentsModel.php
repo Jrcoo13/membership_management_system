@@ -24,7 +24,8 @@ class StudentsModel extends Model
         'amount_paid',
         'membership_paid',
         'transaction_date',
-        'status'
+        'status',
+        'reference_id'
     ];
 
     // New method to calculate monthly revenue

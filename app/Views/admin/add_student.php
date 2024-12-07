@@ -126,21 +126,12 @@
 								<div class="col-12 mb-3">
 									<h5>Personal Information</h5>
 								</div>
-								<div class="col-md-4">
+								<div class="col-md-8">
 									<div class="form-group">
-										<label for="first_name" class="form-label">First name</label>
-										<input type="text" class="form-control" name="first_name" id="first_name" required>
+										<label for="fullname" class="form-label">Student full name</label>
+										<input type="text" class="form-control" name="fullname" id="fullname" required>
 										<div class="invalid-feedback">
-											Please enter your first name.
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="last_name">Last Name</label>
-										<input class="form-control" type="text" name="last_name" id="last_name" required>
-										<div class="invalid-feedback">
-											Please enter your last name.
+											Please enter the student full name.
 										</div>
 									</div>
 								</div>
@@ -150,7 +141,7 @@
 										<input type="text" class="form-control" name="student_id" id="student_id" maxlength="7" pattern="\d{7}" required
 											oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 										<div class="invalid-feedback">
-											Please enter your student ID.
+											Please enter the student ID.
 										</div>
 									</div>
 								</div>
@@ -201,7 +192,7 @@
 										<label for="email">Email</label>
 										<input type="email" class="form-control" name="email" id="email" required>
 										<div class="invalid-feedback">
-											Please provide a valid email address.
+											Please enter the student valid email address.
 										</div>
 									</div>
 								</div>
@@ -211,7 +202,7 @@
 										<input type="text" class="form-control" name="mobile_number" id="mobile_number" maxlength="11" pattern="\d{11}" required
 											oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 										<div class="invalid-feedback">
-											Please provide a valid mobile number.
+											Please enter the student valid mobile number.
 										</div>
 									</div>
 								</div>
@@ -238,7 +229,7 @@
 										<?php endforeach; ?>
 									</div>
 									<div class="invalid-feedback">
-										Please provide a valid mobile number.
+										Please enter the student valid mobile number.
 									</div>
 								</div>
 								<div class="col-12 mb-3 mt-3">

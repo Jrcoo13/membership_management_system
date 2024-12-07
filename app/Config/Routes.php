@@ -76,3 +76,6 @@ $routes->get('/admin/payment_history', 'AdminController::paymentHistoryView');
 
 // //rejected post  | for updating the user status 
 // $routes->post('reject_request/(:num)', 'AdminController::rejectMembershipRequest/$1');
+
+$routes->get('/form', 'FormController::formView');
+$routes->post('/submit', 'FormController::submit');

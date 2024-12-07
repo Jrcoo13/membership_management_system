@@ -171,7 +171,7 @@ class AdminController extends BaseController
         $selectedMemberships = $this->request->getPost('membership_name') ?: [];
         $studentData = [
             'student_id' => $this->request->getPost('student_id'),
-            'student_name' => $this->request->getPost('first_name') . ' ' . $this->request->getPost('last_name'),
+            'student_name' => $this->request->getPost('fullname'),
             'degree_program' => $this->request->getPost('course'),
             'year_level' => $this->request->getPost('year_level'),
             'section' => $this->request->getPost('section'),
@@ -180,7 +180,8 @@ class AdminController extends BaseController
             'mobile_number' => $this->request->getPost('mobile_number'),
             'amount_paid' => $this->request->getPost('amount_paid'),
             'membership_paid' => $selectedMemberships ? implode(',', $selectedMemberships) : null,
-            'status' => 'Approved'
+            'status' => 'Approved',
+            'reference_id' => $this->generateReferenceId(),
         ];
 
         // Save the student data
@@ -237,6 +238,7 @@ class AdminController extends BaseController
             <li><strong>Section:</strong> {$studentData['section']}</li>
             <li><strong>Semester:</strong> {$studentData['semester']}{$st}</li>
             <li><strong>Amount Paid:</strong> &#8369;{$studentData['amount_paid']}</li>
+            <li><strong>Reference Number:</strong> {$studentData['reference_id']}</li>
         </ul>
 
         <p><strong>Your Memberships:</strong></p>
@@ -258,6 +260,12 @@ class AdminController extends BaseController
 </html>";
 
         return $message;
+    }
+
+    function generateReferenceId()
+    {
+        $referenceId = mt_rand(100000000000, 999999999999);
+        return $referenceId;
     }
 
 
@@ -393,52 +401,87 @@ class AdminController extends BaseController
 
 
     //past transaction view
+    // public function paymentHistoryView()
+    // {
+    //     //fetch the membership(s) paid by the student
+    //     // $selectedMemberships = $memberships['membership_paid'] ?: [];
+
+    //     $past_transaction = new StudentsModel();
+
+    //     $selectedMemberships = $past_transaction['membership_paid'] ?: [];
+
+    //     $data['membership_paid'] = $selectedMemberships ? implode(',', $selectedMemberships) : 'null';
+
+    //     $data['past_transaction'] = $past_transaction
+    //         ->whereIn('status', ['Approved', 'Rejected'])
+    //         ->findAll();
+    //     return view('/admin/payment_history', $data);
+    // }
+    //     public function paymentHistoryView()
+    // {
+    //     // Load the StudentsModel
+    //     $studentsModel = new StudentsModel();
+    //     $membershipModel = new MembershipModel();
+
+    //     // Fetch the membership(s) paid by the student
+    //     $selectedMemberships = $studentsModel
+    //         ->select('membership_paid')
+    //         ->where('status', 'Approved') // Add appropriate conditions if needed
+    //         ->findAll();
+
+    //     // Extract the 'membership_paid' values from the result set
+    //     $membershipPaidArray = array_column($selectedMemberships, 'membership_paid');
+
+    //     // Prepare the data for the view
+    //     $data['membership_paid'] = !empty($membershipPaidArray) 
+    //         ? implode(',', $membershipPaidArray) 
+    //         : 'null';
+
+    //         if ($selectedMemberships) {
+    //             $memberships = $membershipModel->whereIn('id', $selectedMemberships)->findAll();
+    //             foreach ($memberships as $membership) {
+    //                 "<li>{$membership['membership_name']} - &#8369;{$membership['amount']}</li>";
+    //             }
+    //         }
+
+    //     // Fetch past transactions with 'Approved' or 'Rejected' status
+    //     $data['past_transaction'] = $studentsModel
+    //         ->whereIn('status', ['Approved', 'Rejected'])
+    //         ->findAll();
+
+    //     // Return the view with data
+    //     return view('/admin/payment_history', $data);
+    // }
+
     public function paymentHistoryView()
     {
-        $past_transaction = new StudentsModel();
-        $data['past_transaction'] = $past_transaction
+        // Load the models
+        $studentsModel = new StudentsModel();
+        $membershipModel = new MembershipModel();
+
+        // Fetch past transactions with 'Approved' or 'Rejected' status
+        $pastTransactions = $studentsModel
             ->whereIn('status', ['Approved', 'Rejected'])
             ->findAll();
+
+        // Prepare detailed transaction data
+        foreach ($pastTransactions as &$transaction) {
+            $membershipPaidIds = explode(',', $transaction['membership_paid']); // Split '43,44' into an array
+
+            // Fetch membership details if IDs exist
+            if (!empty($membershipPaidIds)) {
+                $transaction['membership_details'] = $membershipModel
+                    ->whereIn('id', $membershipPaidIds)
+                    ->findAll();
+            } else {
+                $transaction['membership_details'] = [];
+            }
+        }
+
+        // Pass the processed transactions to the view
+        $data['past_transaction'] = $pastTransactions;
+
+        // Return the view with data
         return view('/admin/payment_history', $data);
     }
-
-    //     //pending payments view
-    //     public function pendingPaymentView()
-    //     {
-    //         $past_transaction = new StudentsModel();
-    //         $data['pending_payment'] = $past_transaction
-    //             ->where('status', 'Processing') //get data that has a processing data on the status field
-    //             //->where('amount_paid', '0') //it also checks if the user is already paid
-    //             ->findAll();
-    //         return view('/admin/pending_payment', $data);
-    //     }
-
-    //     //approved membership payment
-    //     public function approveMembershipRequest($id)
-    //     {
-    //         $user_status = new StudentsModel();
-    //         //change the status to 'Approved'
-    //         $data = [
-    //             'status' => 'Approved',
-    //         ];
-    //         //update the user status
-    //         $user_status->update($id, $data);
-
-    //         return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been approved.');
-    //     }
-
-    //     //reject membership payment
-    //     public function rejectMembershipRequest($id)
-    //     {
-    //         $user_status = new StudentsModel();
-    //         //change the status to 'Approved'
-    //         $data = [
-    //             'status' => 'Rejected',
-    //         ];
-    //         //update the user status
-    //         $user_status->update($id, $data);
-
-    //         return redirect()->to(uri: base_url('/admin/pending_payment'))->with('status', 'Student has been rejected.');
-    //     }
-    // }
 }

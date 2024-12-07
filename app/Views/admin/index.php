@@ -105,7 +105,7 @@
 					<div class="col-md-12 d-flex">
 						<div class="card card-table flex-fill">
 							<div class="card-header">
-								<h3 class="card-title float-left mt-2">Recently Added Students</h3>
+								<h3 class="card-title float-left mt-2">Recently Paid Students</h3>
 								<a href="<?= base_url('/admin/students') ?>" class="btn text-primary float-right">View All</a>
 							</div>
 							<div class="card-body">

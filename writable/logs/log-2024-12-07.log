@@ -1,0 +1,860 @@
+INFO - 2024-12-07 00:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:24:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:24:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:25:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:27:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 00:34:09 --> ErrorException: Undefined array key "membership_paid"
+[Method: GET, Route: admin/payment_history]
+in APPPATH/Controllers/AdminController.php on line 410.
+ 1 APPPATH/Controllers/AdminController.php(410): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "membership_paid"', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php', 410)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->paymentHistoryView()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 00:34:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 00:34:29 --> ErrorException: Undefined array key "membership_paid"
+[Method: GET, Route: admin/payment_history]
+in APPPATH/Controllers/AdminController.php on line 410.
+ 1 APPPATH/Controllers/AdminController.php(410): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "membership_paid"', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php', 410)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->paymentHistoryView()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 00:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 00:34:30 --> ErrorException: Undefined array key "membership_paid"
+[Method: GET, Route: admin/payment_history]
+in APPPATH/Controllers/AdminController.php on line 410.
+ 1 APPPATH/Controllers/AdminController.php(410): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "membership_paid"', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php', 410)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->paymentHistoryView()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 00:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 00:34:30 --> ErrorException: Undefined array key "membership_paid"
+[Method: GET, Route: admin/payment_history]
+in APPPATH/Controllers/AdminController.php on line 410.
+ 1 APPPATH/Controllers/AdminController.php(410): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "membership_paid"', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php', 410)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->paymentHistoryView()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 00:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 00:34:31 --> ErrorException: Undefined array key "membership_paid"
+[Method: GET, Route: admin/payment_history]
+in APPPATH/Controllers/AdminController.php on line 410.
+ 1 APPPATH/Controllers/AdminController.php(410): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "membership_paid"', '/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/AdminController.php', 410)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->paymentHistoryView()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 00:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:44:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-07 00:44:52 --> TypeError: implode(): Argument #2 ($array) must be of type ?array, int given
+[Method: GET, Route: admin/payment_history]
+in APPPATH/Views/admin/payment_history.php on line 144.
+ 1 APPPATH/Views/admin/payment_history.php(144): implode(', ', 43)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Views/admin/payment_history.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('/admin/payment_history', [], true)
+ 5 APPPATH/Controllers/AdminController.php(445): view('/admin/payment_history', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminController->paymentHistoryView()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 00:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 00:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:05:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:19:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:23:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:31:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:31:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:31:31 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 01:31:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:31:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 204235944104)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 204235944104)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:31:31 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 204235944104)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 204235944104)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 204235944104)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 01:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:33:48 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 01:33:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:33:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 913491038008)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 913491038008)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:33:48 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 913491038008)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 913491038008)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 913491038008)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 01:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:34:04 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 01:34:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:34:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 634756587392)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 634756587392)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:34:04 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 634756587392)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 634756587392)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 634756587392)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 01:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:37:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:42:16 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 01:42:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:42:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 281462233622)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 281462233622)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:42:16 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 281462233622)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 281462233622)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 281462233622)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 01:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:44:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:45:34 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 01:45:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:45:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 903531093423)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 903531093423)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:45:34 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 903531093423)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 903531093423)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 903531093423)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 01:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:47:34 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 01:47:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:47:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 761096087067)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 761096087067)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:47:34 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 761096087067)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 761096087067)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 761096087067)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 01:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:48:04 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 01:48:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:48:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 579520491133)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 579520491133)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 01:48:04 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 579520491133)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 579520491133)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'\', NULL, \'Approved\', 579520491133)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 01:48:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:48:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:48:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:52:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:52:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:53:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 01:55:12 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-12-07 01:55:12 --> 220 smtp.googlemail.com ESMTP d9443c01a7336-215f8ef9d97sm34761205ad.117 - gsmtp
+
+hello: 250-smtp.googlemail.com at your service, [2001:4456:cc0:9f00:3854:7f0b:e5a3:e7ad]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+from: 250 2.1.0 OK d9443c01a7336-215f8ef9d97sm34761205ad.117 - gsmtp
+
+to: 250 2.1.5 OK d9443c01a7336-215f8ef9d97sm34761205ad.117 - gsmtp
+
+data: 354 Go ahead d9443c01a7336-215f8ef9d97sm34761205ad.117 - gsmtp
+
+
+quit: 250 2.0.0 OK  1733536512 d9443c01a7336-215f8ef9d97sm34761205ad.117 - gsmtp
+
+The following SMTP error was encountered: 250 2.0.0 OK  1733536512 d9443c01a7336-215f8ef9d97sm34761205ad.117 - gsmtp
+
+The following SMTP error was encountered: 
+INFO - 2024-12-07 01:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 01:59:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:01:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:12:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:14:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 02:41:17 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-12-07 02:41:17 --> 
+hello: 220 smtp.googlemail.com ESMTP 98e67ed59e1d1-2ef82a872ebsm392577a91.28 - gsmtp
+
+The following SMTP error was encountered: 220 smtp.googlemail.com ESMTP 98e67ed59e1d1-2ef82a872ebsm392577a91.28 - gsmtp
+
+INFO - 2024-12-07 02:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:42:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:42:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:57:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:58:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 02:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:00:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 03:04:38 --> mysqli_sql_exception: Column 'membership_paid' cannot be null in /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `st...', 0)
+#1 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/BaseModel.php(751): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/app/Controllers/FormController.php(43): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(933): App\Controllers\FormController->submit()
+#10 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+#11 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/XAMPP/xamppfiles/htdocs/membership_management_system/system/rewrite.php(44): require_once('/Applications/X...')
+#16 {main}
+CRITICAL - 2024-12-07 03:04:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+[Method: POST, Route: submit]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 03:04:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'140.00\', NULL, \'Approved\', 221745584334)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'140.00\', NULL, \'Approved\', 221745584334)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 7 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 8 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+CRITICAL - 2024-12-07 03:04:38 --> [Caused by] mysqli_sql_exception: Column 'membership_paid' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'140.00\', NULL, \'Approved\', 221745584334)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'140.00\', NULL, \'Approved\', 221745584334)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (\'2250503\', \'Jerico Ocal\', \'Bachelor of Science in Information Technology\', \'1\', \'A\', \'1\', \'jericoocal03@gmail.com\', \'09652058816\', \'140.00\', NULL, \'Approved\', 221745584334)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `student` (`student_id`, `student_name`, `degree_program`, `year_level`, `section`, `semester`, `email`, `mobile_number`, `amount_paid`, `membership_paid`, `status`, `reference_id`) VALUES (:student_id:, :student_name:, :degree_program:, :year_level:, :section:, :semester:, :email:, :mobile_number:, :amount_paid:, :membership_paid:, :status:, :reference_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(751): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/FormController.php(43): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\FormController->submit()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FormController))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/XAMPP/xamppfiles/htdocs/membership_management_system/public/index.php')
+INFO - 2024-12-07 03:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:34:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-07 03:44:38 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-12-07 03:44:38 --> 220 smtp.googlemail.com ESMTP d2e1a72fcca58-725a29ca9d1sm3774455b3a.23 - gsmtp
+
+hello: 250-smtp.googlemail.com at your service, [2001:4456:cc0:9f00:3854:7f0b:e5a3:e7ad]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+from: 250 2.1.0 OK d2e1a72fcca58-725a29ca9d1sm3774455b3a.23 - gsmtp
+
+to: 250 2.1.5 OK d2e1a72fcca58-725a29ca9d1sm3774455b3a.23 - gsmtp
+
+data: 354 Go ahead d2e1a72fcca58-725a29ca9d1sm3774455b3a.23 - gsmtp
+
+
+quit: 250 2.0.0 OK  1733543078 d2e1a72fcca58-725a29ca9d1sm3774455b3a.23 - gsmtp
+
+The following SMTP error was encountered: 250 2.0.0 OK  1733543078 d2e1a72fcca58-725a29ca9d1sm3774455b3a.23 - gsmtp
+
+The following SMTP error was encountered: 
+INFO - 2024-12-07 03:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-07 03:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

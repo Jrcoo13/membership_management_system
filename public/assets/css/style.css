@@ -1904,14 +1904,15 @@ html.menu-opened body {
 .login_class {
   margin-top: 40px;
 }
+
 .login-wrapper .loginbox {
   background-color: #fff;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   margin: 1.875rem auto;
-  max-width: 800px;
-  min-height: 500px;
+  max-width: 450px;
+  min-height: unset;
   width: 100%;
 }
 .login_pswd {
@@ -1947,14 +1948,15 @@ html.menu-opened body {
   justify-content: center;
   padding: 80px;
   width: 400px;
-  display: flex;
+  display: none;
 }
 .login-wrapper .loginbox .login-right {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 40px;
-  width: 400px;
+  float: none;
+  padding: 1.875rem;
+  width: 100%;
 }
 .login-wrapper .loginbox .login-right .login-right-wrap {
   max-width: 100%;
@@ -5484,14 +5486,21 @@ h3.page-sub-title {
   .top-nav-search {
     display: none;
   }
+
+  .login-wrapper .loginbox {
+    max-width: 450px;
+    min-height: unset;
+  }
+
   .login-wrapper .loginbox .login-left {
-    padding: 80px 50px;
-    width: 50%;
+    display:none;
   }
   .login-wrapper .loginbox .login-right {
-    padding: 50px;
-    width: 50%;
+    float: none;
+    padding: 1.875rem;
+    width: 100%;
   }
+
   .sidebar {
     margin-left: -225px;
     width: 225px;

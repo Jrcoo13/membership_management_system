@@ -21,6 +21,10 @@
         a {
             text-decoration: none;
         }
+
+        td {
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -28,8 +32,8 @@
 
     <div class="main-wrapper">
         <!-- HEADER START -->
-		<?php include APPPATH . 'Views/admin/includes/header.php'; ?>
-		<!-- HEADER END -->
+        <?php include APPPATH . 'Views/admin/includes/header.php'; ?>
+        <!-- HEADER END -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
@@ -37,14 +41,14 @@
                         <li> <a href="<?= base_url('admin/index') ?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
                         <li class="list-divider"></li>
                         <li class="submenu"> <a href="#"><i class="fa-solid fa-user-group"></i> <span> Students </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="<?= base_url('admin/students') ?>"> All Student </a></li>
-								<li><a href="<?= base_url('admin/add_student') ?>"> Add Student </a></li>
-							</ul>
-						</li>
+                            <ul class="submenu_class" style="display: none;">
+                                <li><a href="<?= base_url('admin/students') ?>"> All Student </a></li>
+                                <li><a href="<?= base_url('admin/add_student') ?>"> Add Student </a></li>
+                            </ul>
+                        </li>
                         <li> <a href="<?= base_url('/admin/membership_plans') ?>"><i class="fa-solid fa-rectangle-list"></i> <span> Membership Plans </span></a></li>
                         <li class="list-divider"></li>
-						<li class="active"> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
+                        <li class="active"> <a href="<?= base_url('/admin/payment_history') ?>"><i class="fa-solid fa-clock-rotate-left"></i> <span> Transaction History </span></a></li>
                     </ul>
                 </div>
             </div>
@@ -105,7 +109,7 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="export-buttons"></div>
+                    <div class="export-buttons"></div>
                     <div class="col-md-12 d-flex">
                         <div class="card card-table flex-fill">
                             <div class="card-body">
@@ -113,10 +117,13 @@
                                     <table class="table table-hover table-center display responsive nowrap" id="table" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
+                                                <th>Reference No.</th>
                                                 <th>Student ID</th>
                                                 <th>Student Name</th>
                                                 <th>Degree Program</th>
-                                                <th>Transaction Date</th>
+                                                <th>Membership Paid</th>
+                                                <th>Amount Paid</th>
+                                                <th>Paid Date</th>
                                                 <th class="text-center">Status</th>
                                             </tr>
                                         </thead>
@@ -128,18 +135,27 @@
                                             <?php else: ?>
                                                 <?php foreach ($past_transaction as $row) : ?>
                                                     <tr>
+                                                        <td><?= $row['reference_id'] ?></td>
                                                         <td><?= $row['student_id'] ?></td>
                                                         <td><?= $row['student_name'] ?></td>
-                                                        <td><?= $row['degree_program']. ' ' .$row['year_level'] ?></td>
+                                                        <td><?= $row['degree_program'] . ' ' . $row['year_level'] ?></td>
+                                                        <td>
+                                                            <?php if (!empty($row['membership_details'])): ?>
+                                                                <?= implode(', ', array_column($row['membership_details'], 'membership_name')) ?>
+                                                            <?php else: ?>
+                                                                None
+                                                            <?php endif; ?>
+                                                        </td>
+                                                        <td><?= $row['amount_paid'] ?></td>
                                                         <td><?= $row['transaction_date'] ?></td>
                                                         <td class="text-center">
-                                                            <?php if($row['status'] == 'Approved') : ?>
-                                                            <span class="btn btn-light btn-sm border-0 text-success bg-success-light">
-                                                                <?= $row['status'] ?>
-                                                            </span>
+                                                            <?php if ($row['status'] == 'Approved') : ?>
+                                                                <span class="btn btn-light btn-sm border-0 text-success bg-success-light">
+                                                                    <?= $row['status'] ?>
+                                                                </span>
                                                             <?php else : ?>
                                                                 <span class="btn btn-light btn-sm border-0 text-danger bg-danger-light">
-                                                                <?= $row['status'] ?>
+                                                                    <?= $row['status'] ?>
                                                                 </span>
                                                             <?php endif; ?>
                                                         </td>
