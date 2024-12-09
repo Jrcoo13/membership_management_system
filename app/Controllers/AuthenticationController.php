@@ -31,7 +31,10 @@ class AuthenticationController extends BaseController
 
         if(empty($username) || empty($password)) {
             // Redirect back to the profile page with a message
-            return redirect()->to('/')->with('status', 'Please fill all the fields');
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Please fill all the required fields.',
+            ]);
         }
         // Check if user exists
         if ($user) {
@@ -40,15 +43,21 @@ class AuthenticationController extends BaseController
                 // Store user information in session
                 $this->session->set('user', $user);
 
-                // Redirect to the admin page
-                return redirect()->to('/admin/index');
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => 'Success',
+                ]);
             } else {
-                // Redirect back to the profile page with a message
-                return redirect()->to('/')->with('status', 'Incorrect username or password');
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Incorrect username or password.',
+                ]);
             }
         } else {
-            // Redirect back to the profile page with a message
-            return redirect()->to('/')->with('status', 'Incorrect username or password');
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Incorrect username or password.',
+            ]);
         }
     }
 

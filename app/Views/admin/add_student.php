@@ -84,22 +84,23 @@
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
+							<div id="loading-spinner"
+								style="display: none; 
+										position: fixed; 
+										top: 0; 
+										left: 0; 
+										width: 100%; 
+										height: 100%; 
+										background: rgba(0, 0, 0, 0.5); 
+										z-index: 9999; 
+										display: none; 
+										align-items: center; 
+										justify-content: center;">
+								<div class="spinner-border text-light" role="status">
+									<span class="visually-hidden">Loading...</span>
+								</div>
+							</div>
 							<!-- ALERT MESSAGE -->
-							<?php if (session()->getFlashdata('success')): ?>
-								<script>
-									document.addEventListener("DOMContentLoaded", function() {
-										// Trigger the SweetAlert
-										Swal.fire({
-											icon: 'success',
-											title: 'Success',
-											text: '<?php echo session()->getFlashdata('success'); ?>',
-											confirmButtonText: 'OK',
-											confirmButtonColor: '#3085d6',
-											timer: 3000
-										});
-									});
-								</script>
-							<?php endif; ?>
 							<?php if (session()->getFlashdata('error')): ?>
 								<script>
 									document.addEventListener("DOMContentLoaded", function() {
@@ -406,10 +407,26 @@
 					});
 				} else {
 					event.preventDefault();
-					$('form')[0].submit();
+					const spinner = document.getElementById('loading-spinner');
+					spinner.style.display = 'flex';
+
+					setTimeout(() => {
+						spinner.style.display = 'none';
+
+						Swal.fire({
+							title: 'Success',
+							text: 'Student was successfully added.',
+							icon: 'success',
+							confirmButtonText: 'OK',
+							timer: 3000
+						}).then(() => {
+							$('form')[0].submit();
+						});
+					}, 2000);
 				}
 			});
 		});
 	</script>
 </body>
+
 </html>

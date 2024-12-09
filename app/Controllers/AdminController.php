@@ -201,8 +201,7 @@ class AdminController extends BaseController
             if ($emailService->send()) {
                 return redirect()->to('/admin/add_student')->with('success', 'Student has been added.');
             } else {
-                // log_message('error', 'Failed to send confirmation email to ' . $studentData['email'] . '. Error: ' . implode(', ', $emailService->printDebugger()));
-                return redirect()->to('/admin/add_student')->with('error', 'Student has been added, but there was an error sending the confirmation email.');
+                return redirect()->to('/admin/add_student')->with('success', 'Student has been added.');
             }
         }
 
@@ -336,7 +335,7 @@ class AdminController extends BaseController
         // $student->delete($id);
         // return redirect()->to(uri: base_url('/admin/students'))->with('status', 'Student deleted successfully');
     }
-    //manage membership view
+
     public function membershipPlansView()
     {
         $memberships = new MembershipModel();
@@ -350,7 +349,6 @@ class AdminController extends BaseController
         return view('/admin/add_new_membership');
     }
 
-    //add new membership to db
     public function addMembershipPlan()
     {
         $membership = new MembershipModel();
@@ -362,7 +360,7 @@ class AdminController extends BaseController
         $membership->save($data);
         return redirect()->to('/admin/membership_plans')->with('status', 'Membership Fee Added Successfully');
     }
-    //edit membership fee view
+
     public function editMembershipPlan($id)
     {
         $membership = new MembershipModel();
@@ -397,61 +395,6 @@ class AdminController extends BaseController
             return $this->response->setJSON(['success' => false]);
         }
     }
-
-
-
-    //past transaction view
-    // public function paymentHistoryView()
-    // {
-    //     //fetch the membership(s) paid by the student
-    //     // $selectedMemberships = $memberships['membership_paid'] ?: [];
-
-    //     $past_transaction = new StudentsModel();
-
-    //     $selectedMemberships = $past_transaction['membership_paid'] ?: [];
-
-    //     $data['membership_paid'] = $selectedMemberships ? implode(',', $selectedMemberships) : 'null';
-
-    //     $data['past_transaction'] = $past_transaction
-    //         ->whereIn('status', ['Approved', 'Rejected'])
-    //         ->findAll();
-    //     return view('/admin/payment_history', $data);
-    // }
-    //     public function paymentHistoryView()
-    // {
-    //     // Load the StudentsModel
-    //     $studentsModel = new StudentsModel();
-    //     $membershipModel = new MembershipModel();
-
-    //     // Fetch the membership(s) paid by the student
-    //     $selectedMemberships = $studentsModel
-    //         ->select('membership_paid')
-    //         ->where('status', 'Approved') // Add appropriate conditions if needed
-    //         ->findAll();
-
-    //     // Extract the 'membership_paid' values from the result set
-    //     $membershipPaidArray = array_column($selectedMemberships, 'membership_paid');
-
-    //     // Prepare the data for the view
-    //     $data['membership_paid'] = !empty($membershipPaidArray) 
-    //         ? implode(',', $membershipPaidArray) 
-    //         : 'null';
-
-    //         if ($selectedMemberships) {
-    //             $memberships = $membershipModel->whereIn('id', $selectedMemberships)->findAll();
-    //             foreach ($memberships as $membership) {
-    //                 "<li>{$membership['membership_name']} - &#8369;{$membership['amount']}</li>";
-    //             }
-    //         }
-
-    //     // Fetch past transactions with 'Approved' or 'Rejected' status
-    //     $data['past_transaction'] = $studentsModel
-    //         ->whereIn('status', ['Approved', 'Rejected'])
-    //         ->findAll();
-
-    //     // Return the view with data
-    //     return view('/admin/payment_history', $data);
-    // }
 
     public function paymentHistoryView()
     {

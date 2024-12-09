@@ -46,7 +46,22 @@
 		<div class="container">
 			<form action="<?= base_url('/submit') ?>" method="POST" class="row g-3 needs-validation book-form" id="membership-form" novalidate>
 				<div class="row">
-					<!-- <div class="row formtype"> -->
+					<div id="loading-spinner"
+						style="display: none; 
+                            position: fixed; 
+                            top: 0; 
+                            left: 0; 
+                            width: 100%; 
+                            height: 100%; 
+                            background: rgba(0, 0, 0, 0.5); 
+                            z-index: 9999; 
+                            display: none; 
+                            align-items: center; 
+                            justify-content: center;">
+						<div class="spinner-border text-light" role="status">
+							<span class="visually-hidden">Loading...</span>
+						</div>
+					</div>
 					<div class="col">
 						<h3 style="text-align: center;" class="title">LSC Online Membership Registration Form</h3>
 						<div class="col-md-12">
@@ -357,15 +372,23 @@
 				}).then(() => {
 					isFormSubmitted = true;
 
-					// Display success message
-					Swal.fire({
-						icon: 'success',
-						title: 'Success',
-						text: 'Form has been successfully submitted.',
-						confirmButtonText: 'OK',
-						timer: 3000
-					});
-					$('#membership-form')[0].submit();
+					const spinner = document.getElementById('loading-spinner');
+					spinner.style.display = 'flex';
+
+					setTimeout(() => {
+						spinner.style.display = 'none';
+
+						Swal.fire({
+							title: 'Success',
+							text: 'Form has been successfully submitted.',
+							icon: 'success',
+							confirmButtonText: 'OK',
+							timer: 3000
+						}).then(() => {
+							$('#membership-form')[0].submit();
+							// window.location.href = '<?= base_url('admin_profile/') ?>';
+						});
+					}, 2000);
 				});
 			}
 		});
